@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+
+/* Mobile version 
+
+Palhetas: 
+
+#5952FF azul
+#FFF752 amarelo
+#696980 azul escuro
+#807E69 cinza
+*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html, body {
+   width:100vw;
+   min-height: 100vh;
+}
+header {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    
+
+    border-bottom: 1px solid #FFF752;
+
+    background-color: #5952FF;
+}
+
+header > div#header-itens {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+}
+
+
+header > div#header-itens > div#logotipo > div#logo {
+    background-image: url("../images/Duck-ai-image-2026-05-20-21-12.jpeg");
+    background-size: cover;
+
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+
+    border-radius: 50%;
+}
+
+header  div#logotipo {
+    display: flex;
+    margin-left: 10px;
+}
+
+header > div#header-itens > div#logotipo > div#tema > p {
+    font-size: 1.6em;
+    font-family:"Kolker Brush", cursive;
+
+    margin-top: 15px;
+    margin-left: 3px;
+
+}
+
+header > div#header-itens > div#menu  {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+
+}
+
+header > div#header-itens > div#menu > div#icone{
+    
+
+    margin-top: 15px;
+    cursor:pointer;
+}
+
+
+main  > div#introducao {
+    padding: 20px;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    
+    background-image: linear-gradient(to bottom,#5952FF,  #696980);
+
+    margin: auto;
+}
+main > div#introducao > div#introducao-texto {
+    width: 100%;
+    padding-bottom: 20px;
+    
+}
+
+main > div#introducao > div#introducao-texto > p {
+    font-family:"Kolker Brush", cursive;
+    font-size: 1.7em;
+    font-weight: bolder;
+
+    color: white;
+    text-shadow: 2px 1px #090921;
+
+    padding: 10px;
+    background: #5852ff51 ;
+    background-size: cover;
+    border-radius: 15px;
+
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.325);
+}
+main > div#introducao > div#introducao-imagem {
+    height: 200px;
+    width:  100%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/pexels-entero-37199657.jpg");
+    
+    border-radius: 50%;
+}
