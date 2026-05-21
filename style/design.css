@@ -83,23 +83,43 @@ header > div#header-itens > div#logotipo > div#tema > p:hover {
 header > div#header-itens > div#menu  {
     display: flex;
     flex-direction: row;
-    margin-right: 10px;
-
 }
 
-header > div#header-itens > div#menu > div#meu-github > p {
-    font-family: "Noto Serif JP";
-    margin-top: 15px;
-    margin-right: 5px;
+header > div#header-itens > div#menu > div#meu-github {
+
+    height: 30px;
+
+    padding:3px;
+    margin-top: 12px;
 
     background-color: white;
+
+    border-radius: 25px;
+
     transition: 0.8s;
 }
 
+a#meu-github-link {
+     font-family: "Dela Gothic One", sans-serif;;
+    color: black;
+
+    text-decoration: none;
+}
+
+a#meu-github-link:hover {
+    color:#5952FF;
+}
+
+header > div#header-itens > div#menu > div#meu-github:hover {
+    background-color:#FFF752;
+}
+
+
 header > div#header-itens > div#menu > div#icone {
-    margin-top: 15px;
     cursor:pointer;
 
+    margin-top: 15px;
+    margin-left: 4px;
     transition: 0.8s;
 }
 
@@ -159,7 +179,7 @@ main > div#introducao > div#introducao-caixa > div#introducao-imagem {
     background-position: center center;
     background-image: url("../images/entero-car.png");
     
-    margin-bottom: 200px;
+    margin-bottom: 300px;
 }
 
 main > div#resumo {
@@ -173,14 +193,28 @@ main > div#resumo {
 }
 
 main > div#resumo > div#resumo-caixa {
+    font-family: "Inter", sans-serif;
     display: flex;
     justify-content: space-between;
     width: 80%;
 }
 
-main > div#menu-parte {
-    background-image: linear-gradient(to top,#FFF752, #807E69 );
+main > div#resumo > div#resumo-caixa > div#resumo-parte-1 {
+    padding-right: 30px;
+    padding-left: 40px;
+}
 
+main > div#resumo > div#resumo-caixa > div#resumo-parte-1 > p {
+    padding-bottom: 10px;
+}
+
+main > div#resumo > div#resumo-caixa > div#resumo-parte-2 > p {
+    padding-bottom: 10px;
+}
+ 
+main > div#menu-parte {
+    background-image: linear-gradient(to bottom, #807E69 , #807E69, #807E69,  #5952FF);
+    
     height: 700px;
 }
 
@@ -225,7 +259,7 @@ main > div#menu-parte > div#menu-caixa > div#menu-para-rodape {
 } 
 
 .grande:hover {
-    color: #5952FF;
+    color: #FFF752;
 }
 
 .pequeno {
@@ -238,6 +272,6 @@ main > div#menu-parte > div#menu-caixa > div#menu-para-rodape {
     cursor: pointer;
 }
 
-.pequeno:hover > a {
-    color: #5952FF;
+.pequeno:hover {
+    color: #FFF752;
 }
