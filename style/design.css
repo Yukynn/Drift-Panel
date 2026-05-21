@@ -5,10 +5,21 @@
 
 Palhetas: 
 
+Palheta principal
+
 #5952FF azul
 #FFF752 amarelo
 #696980 azul escuro
 #807E69 cinza
+
+Palheta carro verde ( fundo 1 )
+
+#00FF0D verde
+#FFCD52 laranja
+#696980 azul cinza
+
+Palheta Carro vermelho ( fundo 2 )
+
 */
 
 * {
@@ -24,6 +35,9 @@ html, body {
    overflow-x: hidden;
 }
 header {
+    position: fixed;
+    width: 100%;
+
     height: 60px;
     display: flex;
     flex-direction: row;
@@ -127,6 +141,9 @@ header > div#header-itens > div#menu > div#icone:hover {
     color: #FFF752;
 }
 
+main {
+    padding-top: 60px;
+}
 main > div#introducao {
     display: flex;
     flex-direction: column;
@@ -213,7 +230,7 @@ main > div#resumo > div#resumo-caixa > div#resumo-parte-2 > p {
 }
  
 main > div#menu-parte {
-    background-image: linear-gradient(to bottom, #807E69 , #807E69, #807E69,  #5952FF);
+    background-image: linear-gradient(to bottom, #807E69 , #807E69, #807E69,  #00FF0D);
     
     height: 700px;
 }
@@ -274,4 +291,76 @@ main > div#menu-parte > div#menu-caixa > div#menu-para-rodape {
 
 .pequeno:hover {
     color: #FFF752;
+}
+
+a.pequeno-link {
+    color: white;
+    text-decoration: none;
+
+    transition: 0.8s;
+}
+
+a.pequeno-link:hover {
+    color: #FFF752;
+}
+main > div#papel-fundo-1 > div#fundo-1 {
+    height: 400px;
+    width:100%;
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
+    background-image: url("../images/pexels-joaquin-delgado-497073239-19298341.jpg");
+
+    border-top:1px solid #FFF752;
+    border-bottom:1px solid #FFF752;
+    transition: 0.8s;
+}
+
+main > div#sobre {
+    display: flex;
+    background-image:linear-gradient(to bottom, #00FF0D , #00FF0D, #FFF752, #FFF752)
+}
+
+main > div#sobre > div#sobre-caixa {
+    
+    display: flex;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+
+    margin: auto;
+}
+
+main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-grande {
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    font-size: 5em;
+    margin-bottom: 40px;
+
+    font-family:"Kolker Brush", cursive;
+
+    text-shadow: 2px 1px #090921;
+}
+
+main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-pequeno {
+    font-size: 1.0em;
+    text-indent: 30px;
+    color: white;
+    text-shadow: 2px 1px #090921;
+}
+
+main > div#papel-fundo-2 > div#fundo-2 {
+    height: 400px;
+    width:100%;
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-image: url("../images/pexels-jacobmooreimages-25637443.jpg");
+
+    border-top:1px solid #FFF752;
+    border-bottom:1px solid #FFF752;
+    transition: 0.8s;
 }
