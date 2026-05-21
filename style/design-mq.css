@@ -1,0 +1,15 @@
+@charset  "UTF-8";
+
+/*          MEDIA QUERIES
+
+
+    Celular: até 600px
+    Tablet: 601px – 900px
+    Desktop: 901px – 1200px
+    TV / grandes telas: acima de 1200px
+
+*/
+
+@media screen and (min-width: 601) and (max-width: 900px) {
+    
+}

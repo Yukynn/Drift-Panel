@@ -14,6 +14,7 @@ Palhetas:
 * {
     padding: 0px;
     margin: 0px;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -40,7 +41,7 @@ header > div#header-itens {
 
 
 header > div#header-itens > div#logotipo > div#logo {
-    background-image: url("../images/Duck-ai-image-2026-05-20-21-12.jpeg");
+    background-image: url("../images/drift-icon.png");
     background-size: cover;
 
     width: 30px;
@@ -48,6 +49,13 @@ header > div#header-itens > div#logotipo > div#logo {
     margin-top: 15px;
 
     border-radius: 50%;
+    background-color: white;
+    
+    transition: 0.8s;
+}
+
+header > div#header-itens > div#logotipo > div#logo:hover {
+    background-color: #FFF752;
 }
 
 header  div#logotipo {
@@ -62,6 +70,12 @@ header > div#header-itens > div#logotipo > div#tema > p {
     margin-top: 15px;
     margin-left: 3px;
 
+    transition: 0.8s;
+
+}
+
+header > div#header-itens > div#logotipo > div#tema > p:hover {
+    color: #FFF752;
 }
 
 header > div#header-itens > div#menu  {
@@ -71,53 +85,76 @@ header > div#header-itens > div#menu  {
 
 }
 
-header > div#header-itens > div#menu > div#icone{
+header > div#header-itens > div#menu > div#icone {
     
 
     margin-top: 15px;
     cursor:pointer;
+
+    transition: 0.8s;
 }
 
+header > div#header-itens > div#menu > div#icone:hover {
+    color: #FFF752;
+}
 
-main  > div#introducao {
-    padding: 20px;
-    width: 410px;
+main > div#introducao {
     display: flex;
     flex-direction: column;
     
     background-image: linear-gradient(to bottom,#5952FF,  #696980);
 
+    border-bottom: 1px solid #FFF752;
+}
+
+main  > div#introducao > div#introducao-caixa {
+    padding: 20px;
+    width: 400px;
+
     margin: auto;
 }
-main > div#introducao > div#introducao-texto {
+main > div#introducao > div#introducao-caixa > div#introducao-texto {
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     
 }
 
-main > div#introducao > div#introducao-texto > p {
+main > div#introducao > div#introducao-caixa > div#introducao-texto > p {
     font-family:"Kolker Brush", cursive;
-    font-size: 1.7em;
+    font-size: 2.6em;
     font-weight: bolder;
+    text-align: center;
 
     color: white;
     text-shadow: 2px 1px #090921;
 
     padding: 10px;
-    background: #5852ff51 ;
+    
     background-size: cover;
     border-radius: 15px;
+    
 
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.325);
+    transition: 0.8s;
+    
+} 
+
+main > div#introducao > div#introducao-caixa > div#introducao-texto > p:hover {
+    color:#FFF752;
 }
-main > div#introducao > div#introducao-imagem {
-    height: 200px;
+main > div#introducao > div#introducao-caixa > div#introducao-imagem {
+    height: 140px;
     width:  100%;
 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../images/pexels-entero-37199657.jpg");
+    background-image: url("../images/entero-car.png");
     
-    border-radius: 50%;
+}
+
+main > div#menu-parte {
+    background-image: linear-gradient(to bottom, #696980, #807E69 );
+
+    height: 700px;
+    padding-top: 200px;
 }
