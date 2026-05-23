@@ -478,7 +478,6 @@ main > div#musica > div#musica-caixa > div#musica-itens {
     flex-direction: column;
     
     background-color: rgba(0, 0, 0, 0.386);
-    transition: 0.8s;
 }
 
 main > div#musica > div#musica-caixa > div#musica-itens > p#musica-p {
