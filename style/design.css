@@ -391,7 +391,7 @@ main > div#papel-fundo-1 > div#fundo-1 {
     background-attachment: fixed;
     background-size: cover;
     background-position: center bottom;
-    background-image: url("../images/pexels-joaquin-delgado-497073239-19298341.jpg");
+    background-image: url("../images/carro-1.jpg");
 
     border-top:1px solid #FFF752;
     border-bottom:1px solid #FFF752;
@@ -452,7 +452,7 @@ main > div#papel-fundo-2 > div#fundo-2 {
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
-    background-image: url("../images/pexels-jacobmooreimages-25637443.jpg");
+    background-image: url("../images/carro-2.jpg");
 
     border-top:1px solid #FFF752;
     border-bottom:1px solid #FFF752;
@@ -507,7 +507,7 @@ main > div#papel-fundo-3 > div#fundo-3 {
     background-attachment: fixed;
     background-size: cover;
     background-position: top center;
-    background-image: url("../images/pexels-harveyvillarino-35683173.jpg");
+    background-image: url("../images/carro-3.jpg");
 
     border-top:1px solid #FFF752;
     border-bottom:1px solid #FFF752;
