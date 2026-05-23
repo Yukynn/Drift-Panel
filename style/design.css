@@ -259,7 +259,7 @@ main > div#resumo > div#resumo-caixa > div#resumo-parte-2 > p {
 main > div#menu-parte {
     background-image: linear-gradient(to bottom, #807E69 , #807E69, #807E69);
     
-    height: 1000px;
+    height: 834px;
 }
 
 main > div#menu-parte > div#menu-caixa {
@@ -297,11 +297,6 @@ main > div#menu-parte > div#menu-caixa > div#menu-para-musica {
 main > div#menu-parte > div#menu-caixa > div#menu-para-creditos {
     border-top: 1px solid #FFF752;
     margin-bottom: 30px;
-}
-
-main > div#menu-parte > div#menu-caixa > div#menu-para-rodape {
-    border-top: 1px solid #FFF752;
-    padding-bottom: 30px;
 }
 
 .grande {
@@ -471,4 +466,48 @@ main > div#papel-fundo-3 > div#fundo-3 {
     border-top:1px solid #FFF752;
     border-bottom:1px solid #FFF752;
     transition: 0.8s;
+}
+
+footer > div#creditos {
+    height: 500px;
+    border-bottom: 1px solid #FFF752;
+}
+
+footer > div#creditos > div#creditos-caixa > div#creditos-itens {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+footer > div#copyright {
+    height: 600px;
+    color: white;
+    background-color: black;
+}
+
+footer > div#copyright > div#yukynn {
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 30px
+}
+    
+#yukynn-logo {
+    background-image: url("../images/yukynn-logo.png");
+    background-size: cover;
+
+    width: 150px;
+    height: 150px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    
+    transition: 0.8s;
+
+    margin: auto;
+}
+
+footer > div#copyright > div#info > div#info-p > p#info-copy-p-site {
+    margin-bottom: 20px;
 }
