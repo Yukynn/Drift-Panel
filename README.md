@@ -1,10 +1,16 @@
 # projeto-driftPanel
-Um site sobre carros?
 
+## Resumo
 
-Texto sobre como funciona o site: 
+"Drift Panel reúne as melhores faixas para transformar cada volta em um momento épico. Aqui você encontra playlists pensadas para adrenalina: batidas intensas para acelerações, grooves marcantes para curvas controladas e faixas atmosféricas para aquecer antes da pista. Navegue, carregue suas músicas e personalize listas sem sair do navegador."
 
+"Nossa interface foi feita para pilotos e entusiastas: controles simples de reprodução, opção de aleatório e repetição, e armazenamento local das suas playlists. Concentre-se na pilotagem — a trilha sonora fica por nossa conta."
 
+"Além das listas pré-selecionadas, você pode criar sets personalizados para cada tipo de sessão: treinos, provas ou apenas passeio livre. Salve combinações, organize faixas por intensidade e troque entre modos com um clique para manter o ritmo perfeito em toda a corrida."
+
+"Comprometemo-nos com simplicidade, performance e privacidade: tudo é reproduzido localmente no navegador, sem upload de arquivos para servidores. Explore, ajuste e acelere — a experiência sonora foi pensada para quem vive o asfalto."
+
+## Sobre como funciona o site: 
 
 Este site funciona como um player local de músicas para drift e carros esportivos: você pode carregar faixas diretamente do seu dispositivo ou usar listas pré-selecionadas para tocar durante suas sessões de direção. A reprodução é feita localmente no navegador (sem envio de arquivos para servidores), com controles simples de play/pause, pular faixa e volume. Há também opções para criar e salvar listas de reprodução personalizadas, repetir faixas ou ativar reprodução aleatória.
 

@@ -20,6 +20,10 @@ Palheta carro verde ( fundo 1 )
 
 Palheta Carro vermelho ( fundo 2 )
 
+#FF0000 vermelho
+#FF2D00 vermeho laranja
+#FF5900 laranja
+
 */
 
 * {
@@ -253,9 +257,9 @@ main > div#resumo > div#resumo-caixa > div#resumo-parte-2 > p {
 }
  
 main > div#menu-parte {
-    background-image: linear-gradient(to bottom, #807E69 , #807E69, #807E69,  #00ff0d);
+    background-image: linear-gradient(to bottom, #807E69 , #807E69, #807E69);
     
-    height: 890px;
+    height: 1000px;
 }
 
 main > div#menu-parte > div#menu-caixa {
@@ -275,7 +279,12 @@ main > div#menu-parte > div#menu-caixa > div#menu-para-intro {
     margin-bottom: 30px;
 }
 
-main > div#menu-parte > div#menu-caixa > div#menu-para-sobre {
+main > div#menu-parte > div#menu-caixa > div#menu-para-resumo {
+    border-top: 1px solid #FFF752;
+    margin-bottom: 30px;
+}
+
+main > div#menu-parte > div#menu-caixa > div#menu-para-funcao {
     border-top: 1px solid #FFF752;
     margin-bottom: 30px;
 }
@@ -366,7 +375,7 @@ main > div#papel-fundo-1 > div#fundo-1 {
 
 main > div#sobre {
     display: flex;
-    background-image:linear-gradient(to bottom, #00FF0D , #00FF0D, #FFF752, #FFF752)
+    background-image:linear-gradient(to bottom, #00FF0D , #00FF0D)
 }
 
 main > div#sobre > div#sobre-caixa {
@@ -406,6 +415,58 @@ main > div#papel-fundo-2 > div#fundo-2 {
     background-size: cover;
     background-position: center center;
     background-image: url("../images/pexels-jacobmooreimages-25637443.jpg");
+
+    border-top:1px solid #FFF752;
+    border-bottom:1px solid #FFF752;
+    transition: 0.8s;
+}
+
+main > div#musica {
+    display: flex;
+    background-image:linear-gradient(to right, #FFF752,  #FF2D00 , #FF0000)
+}
+
+main > div#musica > div#musica-caixa {
+    width: 400px;
+    height: 400px;
+
+    margin: auto;
+}
+
+main > div#musica > div#musica-caixa > div#musica-itens {
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.8s;
+}
+
+main > div#musica > div#musica-caixa > div#musica-itens > p#musica-p {
+    font-size: 5em;
+    font-family:"Kolker Brush", cursive;
+    text-align: center;
+    text-shadow: 2px 1px #090921;
+    color: white;
+
+    margin-top: 10px;
+
+    margin-bottom: 200px;
+}
+
+main > div#musica > div#musica-caixa > div#musica-itens > audio#musica-audio {
+    width: 300px;
+    cursor: pointer;
+
+    margin: auto;
+}
+
+main > div#papel-fundo-3 > div#fundo-3 {
+    height: 400px;
+    width:100%;
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top center;
+    background-image: url("../images/pexels-harveyvillarino-35683173.jpg");
 
     border-top:1px solid #FFF752;
     border-bottom:1px solid #FFF752;
