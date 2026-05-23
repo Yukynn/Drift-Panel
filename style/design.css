@@ -113,11 +113,18 @@ header > div#header-itens > div#menu > div#meu-github {
     transition: 0.8s;
 }
 
+header > div#header-itens > div#menu > div#meu-github:hover {
+   margin-right: 10px;
+   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+}
+
 a#meu-github-link {
-     font-family: "Dela Gothic One", sans-serif;;
+    font-family: "Dela Gothic One", sans-serif;
     color: black;
 
     text-decoration: none;
+
+    transition: 0.8s;
 }
 
 a#meu-github-link:hover {
@@ -132,13 +139,29 @@ header > div#header-itens > div#menu > div#meu-github:hover {
 header > div#header-itens > div#menu > div#icone {
     cursor:pointer;
 
-    margin-top: 15px;
-    margin-left: 4px;
+    height: 25px;
+    padding:5px;
+    margin-top: 13px;
+    margin-left: 15px;
+    margin-right: 5px;
     transition: 0.8s;
+
+    border-radius: 50%;
+    background-color: white;
 }
 
 header > div#header-itens > div#menu > div#icone:hover {
-    color: #FFF752;
+    margin-top: 7px;
+    background-color:#FFF752;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+}
+
+a#icone-link {
+    color: black;
+}
+
+a#icone-link:hover {
+    color: #5952FF;
 }
 
 main {
@@ -230,15 +253,16 @@ main > div#resumo > div#resumo-caixa > div#resumo-parte-2 > p {
 }
  
 main > div#menu-parte {
-    background-image: linear-gradient(to bottom, #807E69 , #807E69, #807E69,  #00FF0D);
+    background-image: linear-gradient(to bottom, #807E69 , #807E69, #807E69,  #00ff0d);
     
-    height: 700px;
+    height: 890px;
 }
 
 main > div#menu-parte > div#menu-caixa {
     width: 100%;
     height: 90%;
     
+    margin-bottom: 20px;
     margin: auto;
 
     display: flex;
@@ -248,18 +272,27 @@ main > div#menu-parte > div#menu-caixa {
 
 main > div#menu-parte > div#menu-caixa > div#menu-para-intro {
     border-top: 1px solid #FFF752;
+    margin-bottom: 30px;
 }
 
 main > div#menu-parte > div#menu-caixa > div#menu-para-sobre {
     border-top: 1px solid #FFF752;
+    margin-bottom: 30px;
 }
 
 main > div#menu-parte > div#menu-caixa > div#menu-para-musica {
     border-top: 1px solid #FFF752;
+    margin-bottom: 30px;
+}
+
+main > div#menu-parte > div#menu-caixa > div#menu-para-creditos {
+    border-top: 1px solid #FFF752;
+    margin-bottom: 30px;
 }
 
 main > div#menu-parte > div#menu-caixa > div#menu-para-rodape {
     border-top: 1px solid #FFF752;
+    padding-bottom: 30px;
 }
 
 .grande {
@@ -275,33 +308,47 @@ main > div#menu-parte > div#menu-caixa > div#menu-para-rodape {
     
 } 
 
-.grande:hover {
-    color: #FFF752;
+.material-symbols-outlined {
+    color: black;
+    font-size: 40px;
+    font-weight: bolder;
+    text-shadow: none;
 }
 
 .pequeno {
-    font-family: "Inter", sans-serif;
-    color: white;
-    text-shadow: 2px 1px #090921;
+    text-align: center;
 
-    padding-top: 30px;
-    padding-left: 60px;
-    cursor: pointer;
+    font-family: "Dela Gothic One", sans-serif;
+    color: black;
+
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 60px;
+    cursor: pointer;    
+
+    border-radius: 25px;
+
+    width: 90px;
+    background-color: white;
+
+    transition: 0.8s;
 }
 
 .pequeno:hover {
-    color: #FFF752;
+    background-color: #FFF752;
+    margin-left: 80px;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.37);
 }
 
 a.pequeno-link {
-    color: white;
+    color: black;
     text-decoration: none;
 
     transition: 0.8s;
 }
 
 a.pequeno-link:hover {
-    color: #FFF752;
+    color: #807E69;
 }
 main > div#papel-fundo-1 > div#fundo-1 {
     height: 400px;
