@@ -43,7 +43,11 @@ html, body {
 header {
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
 
+    z-index: 1000;
     height: 60px;
     display: flex;
     flex-direction: row;
@@ -397,15 +401,20 @@ main > div#papel-fundo-1 > div#fundo-1 {
     background-image: url("../images/carro-1.jpg");
 
     border-top:1px solid #FFF752;
-    border-bottom:1px solid #FFF752;
+    
     transition: 0.8s;
 }
 
 main > div#sobre {
+    position: relative;
     padding-top: 100px;
     padding-bottom: 100px;
     display: flex;
-    background-image:linear-gradient(to bottom, #00FF0D , #00FF0D)
+    
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
+    background-image: url("../images/carro-1.jpg");
 
 }
 
@@ -420,12 +429,25 @@ main > div#sobre > div#sobre-caixa {
 }
 
 main > div#sobre > div#sobre-caixa > div#sobre-itens {
-    background-color: rgba(0, 0, 0, 0.386);
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.16);
     padding: 10px;
-    border-radius: 10px;
-    box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.459);
-
+    border-radius: 16px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.182);
+     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.16);
     transition: 0.8s;
+}
+
+main > div#sobre > div#sobre-caixa > div#sobre-itens:hover {
+    background: rgba(17, 242, 48, 0.33);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(17, 242, 48, 0.16);
 }
 
 main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-grande {
@@ -458,7 +480,6 @@ main > div#papel-fundo-2 > div#fundo-2 {
     background-image: url("../images/carro-2.jpg");
 
     border-top:1px solid #FFF752;
-    border-bottom:1px solid #FFF752;
     transition: 0.8s;
 }
 
@@ -468,7 +489,10 @@ main > div#musica {
     padding-left: 30px;
     padding-right: 30px;
     display: flex;
-    background-image:linear-gradient(to right, #FFF752,  #FF2D00 , #FF0000)
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-image: url("../images/carro-2.jpg");
 }
 
 main > div#musica > div#musica-caixa {
@@ -481,11 +505,26 @@ main > div#musica > div#musica-caixa {
 main > div#musica > div#musica-caixa > div#musica-itens {
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.386);
-     box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.545);
-    border-radius: 15px;
+    position: relative;
+
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.16);
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.182);
+     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.16);
     transition: 0.8s;
+}
+
+main > div#musica > div#musica-caixa > div#musica-itens:hover {
+    background: rgba(242, 17, 17, 0.33);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(242, 17, 17, 0.16);
 }
 
 main > div#musica > div#musica-caixa > div#musica-itens > p#musica-p {
@@ -517,15 +556,19 @@ main > div#papel-fundo-3 > div#fundo-3 {
     background-image: url("../images/carro-3.jpg");
 
     border-top:1px solid #FFF752;
-    border-bottom:1px solid #FFF752;
     transition: 0.8s;
 }
 
 footer > div#creditos {
     padding-top: 100px;
     padding-bottom: 100px;
-    height: 500px;
-    border-bottom: 1px solid #FFF752;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top center;
+    background-image: url("../images/carro-3.jpg");
 }
 
 main > div#creditos> div#creditos-caixa {
@@ -539,17 +582,39 @@ main > div#creditos> div#creditos-caixa {
 footer > div#creditos > div#creditos-caixa > div#creditos-itens {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    position: relative;
+
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.16);
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.182);
+     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    transition: 0.8s;
+}
+
+footer > div#creditos > div#creditos-caixa > div#creditos-itens:hover {
+    background: rgba(242, 17, 212, 0.33);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(242, 17, 212, 0.16);
 }
 
 #creditos-p-grande {
     font-family:"Kolker Brush", cursive;
     font-size: 5em;
-    color: black;
+    color: white;
     text-shadow: 2px 1px #090921;
     text-align: center;
 }
 
+#creditos-playlist {
+    color: white;
+}
 footer > div#copyright {
     height: 740px;
     color: white;
