@@ -9,3 +9,48 @@
     TV / grandes telas: acima de 1200px
 
 */
+
+/*            Tablet               */
+
+
+
+/*              Computador           */
+@media screen and (min-width: 901px)  {
+    main > div#introducao {
+    display: flex;
+    flex-direction: column;
+    
+    background-image: linear-gradient(to bottom,#5952FF,  #696980);
+
+    border-bottom: 1px solid #FFF752;
+    padding-top: 220px;
+    }
+    main  > div#introducao > div#introducao-caixa {
+
+    padding: 20px;
+    max-width: 90%;
+    width: 700px;
+    margin: auto;
+
+    transition: 0.8s;
+    }
+    main > div#introducao > div#introducao-caixa > div#introducao-imagem {
+    height: 300px;
+    width:  100%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/entero-car.png");
+    
+    margin-bottom: 300px;
+
+    transition: 0.8s;
+    }
+    main > div#introducao > div#introducao-caixa > div#introducao-imagem:hover {
+        background-image: url("../images/pexels-entero-37199657.jpg");
+        border-radius: 50%;
+        
+        transition: 0.8s;
+    }
+}

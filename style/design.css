@@ -30,6 +30,8 @@ Palheta Carro vermelho ( fundo 2 )
     padding: 0px;
     margin: 0px;
     scroll-behavior: smooth;
+
+    transition: ease;
 }
 
 html, body {
@@ -182,9 +184,10 @@ main > div#introducao {
 }
 
 main  > div#introducao > div#introducao-caixa {
-    padding: 20px;
-    width: 400px;
 
+    padding: 20px;
+    max-width: 90%;
+    width: 400px;
     margin: auto;
 }
 main > div#introducao > div#introducao-caixa > div#introducao-texto {
@@ -195,7 +198,7 @@ main > div#introducao > div#introducao-caixa > div#introducao-texto {
 
 main > div#introducao > div#introducao-caixa > div#introducao-texto > p {
     font-family:"Kolker Brush", cursive;
-    font-size: 2.6em;
+    font-size: 2.5em;
     font-weight: bolder;
     text-align: center;
 
@@ -410,7 +413,7 @@ main > div#sobre > div#sobre-caixa {
     
     display: flex;
     width: 450px;
-    height: 450px;
+    height: 550px;
     padding: 30px;
 
     margin: auto;
@@ -462,6 +465,8 @@ main > div#papel-fundo-2 > div#fundo-2 {
 main > div#musica {
     padding-top: 100px;
     padding-bottom: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
     display: flex;
     background-image:linear-gradient(to right, #FFF752,  #FF2D00 , #FF0000)
 }
@@ -476,8 +481,10 @@ main > div#musica > div#musica-caixa {
 main > div#musica > div#musica-caixa > div#musica-itens {
     display: flex;
     flex-direction: column;
-    
+    padding: 15px;
     background-color: rgba(0, 0, 0, 0.386);
+     box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.545);
+    border-radius: 15px;
     transition: 0.8s;
 }
 
