@@ -36,4 +36,4 @@ Nota de privacidade: o áudio e as playlists são processados localmente pelo na
 ## Creditos
 
 
- newjazz + pluggnb type beat "LOL" (prod. Nova Frist)
+ "Young Girl" - Ef × Madokas × Leno Ms × Doomshop Typebeat - Prod. Cr4cu
