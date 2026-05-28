@@ -560,7 +560,7 @@ main > div#papel-fundo-3 > div#fundo-3 {
     border-top:1px solid #FFF752;
 
     filter: blur(10px);
-    
+
     transition: 0.8s;
 }
 
@@ -606,37 +606,7 @@ footer > div#creditos > div#creditos-caixa > div#creditos-itens:hover {
     filter: none;
 }
 
-button {
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-
-    cursor: pointer;
-}
-#player-controls .control .material-symbols-outlined {  
-     width: 50px;
-     height: 30px;
-
-    color: rgb(255, 255, 255);
-    background: rgba(242, 17, 17, 0.092);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(16, 6, 6, 0.449);
-
-    padding: 5px;
-
-    transition: 0.8s;
-}
-#player-controls .control .material-symbols-outlined:hover {
-    border: 1px solid rgba(245, 245, 245, 0.449);
-    padding: 7px;
-}
-
-.player-cover-container {
-    margin: auto;
-}
-
+/*             Reprodutor           */
 #cover-art {
     background-size: cover;
 
@@ -645,8 +615,169 @@ button {
     margin-top: 15px;
 
     border-radius: 50%;
+    border: 1px solid rgba(16, 6, 6, 0.449);
+     
+
+    transition: 0.8s;
 }
 
+#cover-art:hover {
+    border: 1px solid rgba(245, 245, 245, 0.449);
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
+}
+
+#progress-container {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+    cursor: pointer;
+}
+
+#player-controls .control .material-symbols-outlined {  
+    width: 45px;
+    height: 30px;
+
+    color: rgb(255, 255, 255);
+    background: rgba(242, 17, 17, 0.092);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(16, 6, 6, 0.449);
+    padding: 5px;
+    margin-bottom: 20px;
+    transition: 0.8s;
+}
+#player-controls .control .material-symbols-outlined:hover {
+    border: 1px solid rgba(245, 245, 245, 0.449);
+    filter: blur(2px);
+}
+
+.player-cover-container {
+    margin: auto;
+}
+
+/*               Parte do players    */
+
+
+/* configuração dos icones */
+#restaurar {
+    font-size: 1em;
+    color: white;
+    margin-right: 5px;
+}
+
+#player-actions .material-symbols-outlined {
+    font-size: 1em;
+    color: white;
+    margin-right: 5px;
+}
+/* botaos */
+#restore-default-btn {
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(242, 17, 17, 0.092);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(16, 6, 6, 0.449);
+    padding: 5px;
+    margin-bottom: 20px;
+    transition: 0.8s;
+}
+
+#restore-default-btn:hover {
+    border: 1px solid rgba(245, 245, 245, 0.449);
+    padding: 10px;
+}
+
+#player-actions {
+    display: flex;
+    flex-flow: row wrap;
+}
+.file-btn {
+    text-align: center;
+    
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(242, 17, 17, 0.092);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(16, 6, 6, 0.449);
+    padding: 5px;
+    margin-bottom: 20px;
+    transition: 0.8s;
+
+    cursor: pointer;
+}
+
+.file-btn:hover {
+     border: 1px solid rgba(245, 245, 245, 0.449);
+    padding: 10px;
+}
+
+#playlist-select {
+    text-align: center;
+    
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(242, 17, 17, 0.092);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(16, 6, 6, 0.449);
+    padding: 5px;
+    margin-bottom: 20px;
+    transition: 0.8s;
+
+    cursor: pointer;
+}
+
+#playlist-select:hover {
+    border: 1px solid rgba(245, 245, 245, 0.449);
+    padding: 10px;
+}
+
+/*              two button              */
+#two-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+#two-button > button {
+    width:120px;
+    height: 60px;
+
+    color: rgb(255, 255, 255);
+    background: rgba(242, 17, 17, 0.092);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(16, 6, 6, 0.449);
+    padding: 5px;
+    margin-bottom: 20px;
+    transition: 0.8s;
+}
+
+#two-button > button:hover {
+    border: 1px solid rgba(245, 245, 245, 0.449);
+    margin: 10px;
+}
+/*                   Creditos*/
 #creditos-p-grande {
     font-family:"Kolker Brush", cursive;
     font-size: 5em;

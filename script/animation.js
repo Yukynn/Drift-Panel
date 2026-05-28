@@ -66,7 +66,7 @@ class DriftPlayer {
         producer: 'Prod. Cr4cu',
         duration: '2:25',
         url: '../playlist/music/prod. Cr4cu/[Free] ＂Verdade Chinesa＂ - Ef × Ugovhb × Freddie Dredd × Doomshop Typebeat - Prod. Cr4cu.mp3',
-        cover: '../playlist/covers/verdade-chinesa.jpg'
+        cover: '../playlist/cover/verdade-chinesa.webp'
       },
       {
         id: 3,
@@ -75,7 +75,7 @@ class DriftPlayer {
         producer: 'Prod. Cr4cu',
         duration: '2:52',
         url: '../playlist/music/prod. Cr4cu/[Free For Profit] ＂I wonder＂ - Massaru  × Ef × Lee san × Yun Li × Detroit Typebeat - Prod. Cr4cu.mp3',
-        cover: '../playlist/covers/i-wonder.jpg'
+        cover: '../playlist/cover/i-wonder.webp'
       },
       {
         id: 4,
@@ -84,7 +84,7 @@ class DriftPlayer {
         producer: 'Prod. Cr4cu',
         duration: '2:12',
         url: '../playlist/music/prod. Cr4cu/[Free] ＂Bound＂ - Yunmaho × Lil zé × Hoodtrap jerk Typebeat - Prod. Cr4cu.mp3',
-        cover: '../playlist/covers/bound.jpg'
+        cover: '../playlist/cover/bound.webp'
       },
       {
         id: 5,
@@ -93,7 +93,7 @@ class DriftPlayer {
         producer: 'Prod. Cr4cu',
         duration: '1:38',
         url: '../playlist/music/prod. Cr4cu/[Free] ＂No surprises＂ - 8poolfv × Lilfatz × Pol0xd × 1nsec × Doomshop Typebeat - Prod. Cr4cu.mp3',
-        cover: '../playlist/covers/no-surprises.jpg'
+        cover: '../playlist/cover/no-surprises.webp'
       },
       {
         id: 6,
@@ -219,12 +219,19 @@ class DriftPlayer {
     }
   }
 
-  toggleRepeat() {
+    toggleRepeat() {
     this.repeatMode = (this.repeatMode + 1) % 3;
-    const repeatStates = ['🔁', '🔂', '🔃'];
-    if (this.repeatBtn) this.repeatBtn.textContent = repeatStates[this.repeatMode];
-    if (this.repeatBtn) this.repeatBtn.style.opacity = this.repeatMode === 0 ? '0.5' : '1';
-  }
+    const repeatStates = ['repeat', 'repeat_on', 'repeat_one']; // nomes Material Symbols
+    const iconSpan = this.repeatBtn ? this.repeatBtn.querySelector('.material-symbols-outlined') : null;
+
+    if (iconSpan) iconSpan.textContent = repeatStates[this.repeatMode];
+
+    if (this.repeatBtn) {
+        this.repeatBtn.style.opacity = this.repeatMode === 0 ? '0.5' : '1';
+        this.repeatBtn.classList.toggle('active', this.repeatMode !== 0);
+    }
+    }
+
 
   // ============ PROGRESSO E BUSCA ============
   updateProgress() {

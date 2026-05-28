@@ -190,19 +190,21 @@
                     <button id="prev-btn" class="control" title="Anterior"><span class="material-symbols-outlined">skip_previous</span></button>
                     <button id="play-btn" class="control" title="Reproduzir"><span class="material-symbols-outlined">play_arrow</span></button>
                     <button id="next-btn" class="control" title="Próximo"><span class="material-symbols-outlined">skip_next</span></button>
-                    <button id="shuffle-btn" class="control" title="Aleatório">🔀</button>
-                    <button id="repeat-btn" class="control" title="Repetir">🔁</button>
-                    <button id="restore-default-btn">🔄 Restaurar Padrão</button>
+                    <button id="shuffle-btn" class="control" title="Aleatório"><span class="material-symbols-outlined">shuffle</span></button>
+                    <button id="repeat-btn" class="control" title="Repetir"><span class="material-symbols-outlined">repeat</span></button>
+                    <button id="restore-default-btn"> <span id="restaurar" class="material-symbols-outlined">forward_media</span>Restaurar Padrão</button>
                 </div>
                 <!-- Ações do Reprodutor -->
                 <div id="player-actions">
                     <label class="file-btn">
-                    + Adicionar faixas
+                    <span class="material-symbols-outlined">queue_music</span>Adicionar faixas
                     <input type="file" id="file-input" accept="audio/*" multiple hidden>
                     </label>
                     <select id="playlist-select" title="Selecionar playlist"></select>
-                    <button id="save-playlist">Salvar playlist</button>
-                    <button id="clear-playlist">Limpar</button>
+                    <div id="two-button">
+                        <button id="save-playlist"><span class="material-symbols-outlined">playlist_add</span>Salvar playlist</button>
+                        <button id="clear-playlist"><span class="material-symbols-outlined">playlist_remove</span>Limpar</button>
+                    </div>
                 </div>
                 <!-- Elemento de Áudio -->
                 <audio id="audio" preload="metadata"></audio>
