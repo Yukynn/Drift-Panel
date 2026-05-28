@@ -98,6 +98,8 @@
         </div>
     </header>
     <main>
+
+        <!--                               iNTRODUÇÃO                                       -->
         <div id="introducao">
             <div id="introducao-caixa">
                 <div id="introducao-texto">
@@ -109,7 +111,7 @@
             </div>
         </div>
 
-
+        <!--                                  RESUMO                                                -->
         <div id="resumo">
             <div id="resumo-caixa">
                 <div id="resumo-parte-1">
@@ -123,6 +125,7 @@
             </div>
         </div>
 
+        <!--                                   Menu                                -->
 
         <div id="menu-parte">
                 <div id="menu-caixa">
@@ -153,6 +156,8 @@
             
             </div>
         </div>
+
+        <!--                                     sobre                                         -->
         <div id="sobre">
                 <div id="sobre-caixa">
                     <div id="sobre-itens">
@@ -166,22 +171,53 @@
             
             </div>
         </div>
-        <div id="musica">
-            <div id="musica-caixa">
-                <div id="musica-itens">
-                    <p id="musica-p">MUSICA</p>
 
-                    <audio src="../playlist/music/prod. Cr4cu/[Free] ＂Young Girl＂ - Ef × Madokas × Leno Ms × Doomshop Typebeat - Prod. Cr4cu.mp3" type="audio/mpeg" controls id="musica-audio" loop="on">Seu navegador não funciona audios?</audio>
+        <!--                      MUSICA                                 -->
+  <div id="musica">
+      <div id="musica-caixa">
+            <div id="musica-itens">
+      
+                <!--              Capa das musicas                -->
+                <div class="player-cover-container">  <img id="cover-art" src="" alt="Capa da música" class="player-cover"></div>
+                <!--           Barra de Progresso                 -->
+                <div id="progress-container">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress" value="0" min="0" max="100" title="Progresso">
+                    <span id="duration">0:00</span>
+                </div>
+                  <!-- Controles de Reprodução -->
+                <div id="player-controls">
+                    <button id="prev-btn" class="control" title="Anterior">⏮</button>
+                    <button id="play-btn" class="control" title="Reproduzir">▶️</button>
+                    <button id="next-btn" class="control" title="Próximo">⏭</button>
+                    <button id="shuffle-btn" class="control" title="Aleatório">🔀</button>
+                    <button id="repeat-btn" class="control" title="Repetir">🔁</button>
+                    <button id="restore-default-btn">🔄 Restaurar Padrão</button>
+                </div>
+                <!-- Ações do Reprodutor -->
+                <div id="player-actions">
+                    <label class="file-btn">
+                    + Adicionar faixas
+                    <input type="file" id="file-input" accept="audio/*" multiple hidden>
+                    </label>
+                    <select id="playlist-select" title="Selecionar playlist"></select>
+                    <button id="save-playlist">Salvar playlist</button>
+                    <button id="clear-playlist">Limpar</button>
+                </div>
+                <!-- Elemento de Áudio -->
+                <audio id="audio" preload="metadata"></audio>
                 </div>
             </div>
         </div>
-        <div id="papel-fundo-3">
-            <div id="fundo-3">
+  </div >
+    <div id="papel-fundo-3">
+        <div id="fundo-3">
             
-            </div>
         </div>
+    </div>
     </main>
     <footer>
+        <!--                            creditos                                -->
         <div id="creditos">
             <div id="creditos-caixa">
                 <div id="creditos-itens">
@@ -190,9 +226,13 @@
                     <div id="creditos-playlist">
                         <ul id="">
                            <li>"Young Girl" - Ef × Madokas × Leno Ms × Doomshop Typebeat - <a href="https://www.youtube.com/@Cracu6969" target="_blank">Prod. Cr4cu</a></li>
+                           <li>""Verdade Chinesa" - Ef × Ugovhb × Freddie Dredd × Doomshop Typebeat  - <a href="https://www.youtube.com/@Cracu6969" target="_blank">Prod. Cr4cu</a></li>
+                           <li>"I wonder" - Massaru × Ef × Lee san × Yun Li × Detroit Typebeat - <a href="https://www.youtube.com/@Cracu6969" target="_blank">Prod. Cr4cu</a></li>
+                           <li>"Bound" - Yunmaho × Lil zé × Hoodtrap jerk Typebeat - <a href="https://www.youtube.com/@Cracu6969" target="_blank">Prod. Cr4cu</a></li>
+                           <li>"No surprises" - 8poolfv × Lilfatz × Pol0xd × 1nsec × Doomshop Typebeat - <a href="https://www.youtube.com/@Cracu6969" target="_blank">Prod. Cr4cu</a></li>
                         </ul>
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
         <div id="copyright">
@@ -219,8 +259,9 @@
                 </div>
             </div>
         </div>
-    </footer>
 
+        <audio src="../playlist/cover/[Free] ＂Acenda o farol＂ - Lilfatz × Madokas × Ugovhb × Doomshop Typebeat - Prod. Cr4cu.webp"></audio>
+    </footer>
     <script src="../script/animation.js"></script>
 </body>
 </html>

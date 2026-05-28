@@ -546,6 +546,8 @@ main > div#musica > div#musica-caixa > div#musica-itens > audio#musica-audio {
     margin: auto;
 }
 
+
+
 main > div#papel-fundo-3 > div#fundo-3 {
     height: 400px;
     width:100%;
@@ -602,6 +604,19 @@ footer > div#creditos > div#creditos-caixa > div#creditos-itens:hover {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(242, 17, 212, 0.16);
+}
+
+.player-cover-container {
+    margin: auto;
+}
+#cover-art {
+    background-size: cover;
+
+    width: 150px;
+    height: 150px;
+    margin-top: 15px;
+
+    border-radius: 50%;
 }
 
 #creditos-p-grande {
