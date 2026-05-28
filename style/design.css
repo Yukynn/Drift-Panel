@@ -402,6 +402,7 @@ main > div#papel-fundo-1 > div#fundo-1 {
 
     border-top:1px solid #FFF752;
     
+    filter: blur(10px);
     transition: 0.8s;
 }
 
@@ -438,16 +439,13 @@ main > div#sobre > div#sobre-caixa > div#sobre-itens {
      backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.16);
+
+    filter: blur(10px);
     transition: 0.8s;
 }
 
 main > div#sobre > div#sobre-caixa > div#sobre-itens:hover {
-    background: rgba(17, 242, 48, 0.33);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(17, 242, 48, 0.16);
+    filter: none;
 }
 
 main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-grande {
@@ -480,6 +478,9 @@ main > div#papel-fundo-2 > div#fundo-2 {
     background-image: url("../images/carro-2.jpg");
 
     border-top:1px solid #FFF752;
+
+    filter: blur(10px);
+
     transition: 0.8s;
 }
 
@@ -515,16 +516,15 @@ main > div#musica > div#musica-caixa > div#musica-itens {
      backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.16);
+
+    filter: blur(10px);
+
     transition: 0.8s;
 }
 
 main > div#musica > div#musica-caixa > div#musica-itens:hover {
-    background: rgba(242, 17, 17, 0.33);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(242, 17, 17, 0.16);
+
+    filter: none;
 }
 
 main > div#musica > div#musica-caixa > div#musica-itens > p#musica-p {
@@ -558,6 +558,9 @@ main > div#papel-fundo-3 > div#fundo-3 {
     background-image: url("../images/carro-3.jpg");
 
     border-top:1px solid #FFF752;
+
+    filter: blur(10px);
+    
     transition: 0.8s;
 }
 
@@ -594,21 +597,46 @@ footer > div#creditos > div#creditos-caixa > div#creditos-itens {
      backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.16);
+
+    filter: blur(10px);
     transition: 0.8s;
 }
 
 footer > div#creditos > div#creditos-caixa > div#creditos-itens:hover {
-    background: rgba(242, 17, 212, 0.33);
+    filter: none;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+    cursor: pointer;
+}
+#player-controls .control .material-symbols-outlined {  
+     width: 50px;
+     height: 30px;
+
+    color: rgb(255, 255, 255);
+    background: rgba(242, 17, 17, 0.092);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(242, 17, 212, 0.16);
+    border: 1px solid rgba(16, 6, 6, 0.449);
+
+    padding: 5px;
+
+    transition: 0.8s;
+}
+#player-controls .control .material-symbols-outlined:hover {
+    border: 1px solid rgba(245, 245, 245, 0.449);
+    padding: 7px;
 }
 
 .player-cover-container {
     margin: auto;
 }
+
 #cover-art {
     background-size: cover;
 

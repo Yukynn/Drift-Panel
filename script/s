@@ -1,3 +1,7 @@
+// ============================================
+// DRIFT PANEL - Music Player Controller
+// ============================================
+
 class DriftPlayer {
   constructor() {
     // Elementos do DOM
@@ -15,14 +19,11 @@ class DriftPlayer {
     this.clearPlaylistBtn = document.getElementById('clear-playlist');
     this.restoreDefaultBtn = document.getElementById('restore-default-btn');
     this.fileInput = document.getElementById('file-input');
-
-    // Elementos de UI adicionais
+    
+    // ✅ NOVO - Elementos para exibir a capa
     this.coverImg = document.getElementById('cover-art');
     this.trackTitleEl = document.getElementById('track-title');
     this.trackArtistEl = document.getElementById('track-artist');
-
-    // Ícone do play/pause (span interno)
-    this.playIcon = this.playBtn ? this.playBtn.querySelector('.material-symbols-outlined') : null;
 
     // Estado do player
     this.isPlaying = false;
@@ -34,10 +35,10 @@ class DriftPlayer {
     this.currentPlaylistName = 'default';
     this.shuffleQueue = [];
 
-    // Playlist padrão
+    // Playlist padrão com capas
     this.initializeDefaultPlaylist();
 
-    // Event listeners
+    // Event Listeners
     this.setupEventListeners();
 
     // Carregar playlists salvas
@@ -48,7 +49,9 @@ class DriftPlayer {
   }
 
   // ============ INICIALIZAÇÃO ============
+
   initializeDefaultPlaylist() {
+    // ✅ ATUALIZADO - Adicionadas as capas das músicas
     this.defaultPlaylist = [
       {
         id: 1,
@@ -110,57 +113,56 @@ class DriftPlayer {
   }
 
   setupEventListeners() {
-    if (this.playBtn) this.playBtn.addEventListener('click', () => this.togglePlay());
-    if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.previousTrack());
-    if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.nextTrack());
-    if (this.shuffleBtn) this.shuffleBtn.addEventListener('click', () => this.toggleShuffle());
-    if (this.repeatBtn) this.repeatBtn.addEventListener('click', () => this.toggleRepeat());
+    // Controles de reprodução
+    this.playBtn.addEventListener('click', () => this.togglePlay());
+    this.prevBtn.addEventListener('click', () => this.previousTrack());
+    this.nextBtn.addEventListener('click', () => this.nextTrack());
+    this.shuffleBtn.addEventListener('click', () => this.toggleShuffle());
+    this.repeatBtn.addEventListener('click', () => this.toggleRepeat());
 
-    if (this.audio) {
-      this.audio.addEventListener('timeupdate', () => this.updateProgress());
-      this.audio.addEventListener('loadedmetadata', () => this.updateDuration());
-      this.audio.addEventListener('ended', () => this.onTrackEnd());
-    }
+    // Progresso da música
+    this.audio.addEventListener('timeupdate', () => this.updateProgress());
+    this.audio.addEventListener('loadedmetadata', () => this.updateDuration());
+    this.audio.addEventListener('ended', () => this.onTrackEnd());
+    this.progress.addEventListener('change', (e) => this.seek(e));
 
-    if (this.progress) this.progress.addEventListener('change', (e) => this.seek(e));
-    if (this.playlistSelect) this.playlistSelect.addEventListener('change', (e) => this.switchPlaylist(e));
-    if (this.savePlaylistBtn) this.savePlaylistBtn.addEventListener('click', () => this.savePlaylistToStorage());
-    if (this.clearPlaylistBtn) this.clearPlaylistBtn.addEventListener('click', () => this.clearCurrentPlaylist());
-    if (this.restoreDefaultBtn) this.restoreDefaultBtn.addEventListener('click', () => this.restoreDefaultPlaylist());
-    if (this.fileInput) this.fileInput.addEventListener('change', (e) => this.addTracksFromFiles(e));
+    // Playlist
+    this.playlistSelect.addEventListener('change', (e) => this.switchPlaylist(e));
+    this.savePlaylistBtn.addEventListener('click', () => this.savePlaylistToStorage());
+    this.clearPlaylistBtn.addEventListener('click', () => this.clearCurrentPlaylist());
+    this.restoreDefaultBtn.addEventListener('click', () => this.restoreDefaultPlaylist());
+    this.fileInput.addEventListener('change', (e) => this.addTracksFromFiles(e));
   }
 
   // ============ CONTROLES DE REPRODUÇÃO ============
+
   togglePlay() {
-    const list = this.playlists[this.currentPlaylistName] || [];
-    if (list.length === 0) {
+    if (this.playlists[this.currentPlaylistName].length === 0) {
       alert('Nenhuma música na playlist!');
       return;
     }
 
-    this.isPlaying = !this.isPlaying;
-
     if (this.isPlaying) {
-      this.loadAndPlayTrack(this.currentTrackIndex);
-      this.audio.play().catch(() => {});
-      if (this.playIcon) this.playIcon.textContent = 'pause';
-    } else {
       this.audio.pause();
-      if (this.playIcon) this.playIcon.textContent = 'play_arrow';
+      this.isPlaying = false;
+      this.playBtn.textContent = 'play_arrow';
+    } else {
+      this.loadAndPlayTrack(this.currentTrackIndex);
+      this.audio.play();
+      this.isPlaying = true;
+      this.playBtn.textContent = '⏸️';
     }
   }
 
   previousTrack() {
-    const len = (this.playlists[this.currentPlaylistName] || []).length;
-    if (len === 0) return;
-    this.currentTrackIndex = (this.currentTrackIndex - 1 + len) % len;
+    if (this.playlists[this.currentPlaylistName].length === 0) return;
+    this.currentTrackIndex = (this.currentTrackIndex - 1 + this.playlists[this.currentPlaylistName].length) % this.playlists[this.currentPlaylistName].length;
     this.loadAndPlayTrack(this.currentTrackIndex);
   }
 
   nextTrack() {
-    const len = (this.playlists[this.currentPlaylistName] || []).length;
-    if (len === 0) return;
-
+    if (this.playlists[this.currentPlaylistName].length === 0) return;
+    
     if (this.isShuffle) {
       const idxInQueue = this.shuffleQueue.indexOf(this.currentTrackIndex);
       if (idxInQueue === -1 || idxInQueue === this.shuffleQueue.length - 1) {
@@ -169,26 +171,26 @@ class DriftPlayer {
         this.currentTrackIndex = this.shuffleQueue[idxInQueue + 1];
       }
     } else {
-      this.currentTrackIndex = (this.currentTrackIndex + 1) % len;
+      this.currentTrackIndex = (this.currentTrackIndex + 1) % this.playlists[this.currentPlaylistName].length;
     }
-
+    
     this.loadAndPlayTrack(this.currentTrackIndex);
   }
 
   onTrackEnd() {
     if (this.repeatMode === 2) {
-      // repetir uma
+      // Repetir uma música
       this.loadAndPlayTrack(this.currentTrackIndex);
     } else if (this.repeatMode === 1) {
-      // repetir tudo
+      // Repetir tudo -> avançar normalmente, nextTrack já dará loop
       this.nextTrack();
     } else {
-      // sem repetição
-      const playlistLength = (this.playlists[this.currentPlaylistName] || []).length;
+      // Sem repetição -> ir para próxima; se voltar ao início e estamos no último, pausar
+      const playlistLength = this.playlists[this.currentPlaylistName].length;
       if (this.currentTrackIndex === playlistLength - 1) {
         this.audio.pause();
         this.isPlaying = false;
-        if (this.playIcon) this.playIcon.textContent = 'play_arrow';
+        this.playBtn.textContent = 'play_arrow';
       } else {
         this.nextTrack();
       }
@@ -196,12 +198,14 @@ class DriftPlayer {
   }
 
   // ============ SHUFFLE E REPEAT ============
+
   toggleShuffle() {
     this.isShuffle = !this.isShuffle;
-    if (this.shuffleBtn) this.shuffleBtn.style.opacity = this.isShuffle ? '1' : '0.5';
-
+    this.shuffleBtn.style.opacity = this.isShuffle ? '1' : '0.5';
+    
     if (this.isShuffle) {
       this.createShuffleQueue();
+      // garantir que a fila comece pela faixa atual
       const currentPos = this.shuffleQueue.indexOf(this.currentTrackIndex);
       if (currentPos > 0) {
         this.shuffleQueue.splice(currentPos, 1);
@@ -211,8 +215,10 @@ class DriftPlayer {
   }
 
   createShuffleQueue() {
-    const playlistLength = (this.playlists[this.currentPlaylistName] || []).length;
+    const playlistLength = this.playlists[this.currentPlaylistName].length;
     this.shuffleQueue = Array.from({ length: playlistLength }, (_, i) => i);
+    
+    // Fisher-Yates shuffle
     for (let i = this.shuffleQueue.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [this.shuffleQueue[i], this.shuffleQueue[j]] = [this.shuffleQueue[j], this.shuffleQueue[i]];
@@ -221,26 +227,27 @@ class DriftPlayer {
 
   toggleRepeat() {
     this.repeatMode = (this.repeatMode + 1) % 3;
+    
     const repeatStates = ['🔁', '🔂', '🔃'];
-    if (this.repeatBtn) this.repeatBtn.textContent = repeatStates[this.repeatMode];
-    if (this.repeatBtn) this.repeatBtn.style.opacity = this.repeatMode === 0 ? '0.5' : '1';
+    this.repeatBtn.textContent = repeatStates[this.repeatMode];
+    this.repeatBtn.style.opacity = this.repeatMode === 0 ? '0.5' : '1';
   }
 
   // ============ PROGRESSO E BUSCA ============
+
   updateProgress() {
-    if (this.audio && this.audio.duration) {
+    if (this.audio.duration) {
       const percent = (this.audio.currentTime / this.audio.duration) * 100;
-      if (this.progress) this.progress.value = percent;
-      if (this.currentTimeEl) this.currentTimeEl.textContent = this.formatTime(this.audio.currentTime);
+      this.progress.value = percent;
+      this.currentTimeEl.textContent = this.formatTime(this.audio.currentTime);
     }
   }
 
   updateDuration() {
-    if (this.durationEl && this.audio) this.durationEl.textContent = this.formatTime(this.audio.duration);
+    this.durationEl.textContent = this.formatTime(this.audio.duration);
   }
 
   seek(e) {
-    if (!this.audio || !this.audio.duration) return;
     const time = (e.target.value / 100) * this.audio.duration;
     this.audio.currentTime = time;
   }
@@ -253,47 +260,59 @@ class DriftPlayer {
   }
 
   // ============ CARREGAR E REPRODUZIR ============
+
   loadAndPlayTrack(index) {
-    const playlist = this.playlists[this.currentPlaylistName] || [];
+    const playlist = this.playlists[this.currentPlaylistName];
     if (playlist.length === 0) return;
 
+    // garantir índice válido
     index = ((index % playlist.length) + playlist.length) % playlist.length;
     this.currentTrackIndex = index;
 
     const track = playlist[index];
-    if (this.audio) {
-      this.audio.src = track.url;
-      this.audio.load();
-    }
-
+    this.audio.src = track.url;
+    this.audio.load();
+    
+    // ✅ NOVO - Atualizar capa e informações da música
     if (this.coverImg) {
       this.coverImg.src = track.cover || '../playlist/covers/default-cover.jpg';
       this.coverImg.alt = track.title;
+      // Adicionar animação de transição
       this.coverImg.style.animation = 'none';
       setTimeout(() => {
-        if (this.coverImg) this.coverImg.style.animation = 'coverFade 0.3s ease-in-out';
+        this.coverImg.style.animation = 'coverFade 0.3s ease-in-out';
       }, 10);
     }
 
-    if (this.trackTitleEl) this.trackTitleEl.textContent = track.title;
-    if (this.trackArtistEl) this.trackArtistEl.textContent = track.artist;
-
-    if (this.isPlaying && this.audio) {
-      this.audio.play().catch(err => console.warn('Play falhou:', err));
-      if (this.playIcon) this.playIcon.textContent = 'pause';
+    // ✅ NOVO - Atualizar título e artista
+    if (this.trackTitleEl) {
+      this.trackTitleEl.textContent = track.title;
+    }
+    if (this.trackArtistEl) {
+      this.trackArtistEl.textContent = track.artist;
+    }
+    
+    if (this.isPlaying) {
+      // só tocar automaticamente se o estado for playing
+      this.audio.play().catch(err => {
+        // autoplay pode falhar por políticas do navegador
+        console.warn('Play falhou:', err);
+      });
     }
 
     console.log(`Tocando: ${track.title} - ${track.artist}`);
   }
 
   // ============ GERENCIAMENTO DE PLAYLISTS ============
+
   switchPlaylist(e) {
     this.currentPlaylistName = e.target.value;
     this.currentTrackIndex = 0;
-    if (this.audio) this.audio.pause();
+    this.audio.pause();
     this.isPlaying = false;
-    if (this.playIcon) this.playIcon.textContent = 'play_arrow';
-    if (this.progress) this.progress.value = 0;
+    this.playBtn.textContent = 'play_arrow';
+    this.progress.value = 0;
+    // ✅ Atualizar capa quando mudar de playlist
     this.loadAndPlayTrack(this.currentTrackIndex);
     this.updatePlaylistDisplay();
   }
@@ -301,9 +320,11 @@ class DriftPlayer {
   savePlaylistToStorage() {
     const playlistName = prompt('Digite o nome da playlist:');
     if (!playlistName || playlistName.trim() === '') return;
+
     if (playlistName in this.playlists) {
       if (!confirm('Playlist já existe. Deseja sobrescrever?')) return;
     }
+
     this.playlists[playlistName] = JSON.parse(JSON.stringify(this.playlists[this.currentPlaylistName]));
     localStorage.setItem('driftPanelPlaylists', JSON.stringify(this.playlists));
     this.updatePlaylistSelect();
@@ -315,17 +336,20 @@ class DriftPlayer {
     if (saved) {
       try {
         this.playlists = JSON.parse(saved);
-        if (!this.playlists['default']) this.playlists['default'] = JSON.parse(JSON.stringify(this.defaultPlaylist));
+        // garantir presença da default
+        if (!this.playlists['default']) {
+          this.playlists['default'] = JSON.parse(JSON.stringify(this.defaultPlaylist));
+        }
       } catch (e) {
         console.error('Erro ao carregar playlists:', e);
       }
     } else {
+      // se nada salvo, já temos default inicializado
       this.playlists['default'] = JSON.parse(JSON.stringify(this.defaultPlaylist));
     }
   }
 
   updatePlaylistSelect() {
-    if (!this.playlistSelect) return;
     this.playlistSelect.innerHTML = '';
     Object.keys(this.playlists).forEach(name => {
       const option = document.createElement('option');
@@ -334,6 +358,7 @@ class DriftPlayer {
       option.textContent = `${name}${badge} (${this.playlists[name].length} músicas)`;
       this.playlistSelect.appendChild(option);
     });
+    // tenta preservar seleção atual
     if (this.playlists[this.currentPlaylistName]) {
       this.playlistSelect.value = this.currentPlaylistName;
     } else {
@@ -343,47 +368,49 @@ class DriftPlayer {
   }
 
   clearCurrentPlaylist() {
-    if (!confirm('Deseja limpar a playlist atual?')) return;
-
-    if (this.currentPlaylistName === 'default') {
-      this.playlists['default'] = JSON.parse(JSON.stringify(this.defaultPlaylist));
-      alert('Playlist restaurada para as músicas padrão!');
-    } else {
-      delete this.playlists[this.currentPlaylistName];
-      this.currentPlaylistName = 'default';
+    if (confirm('Deseja limpar a playlist atual?')) {
+      if (this.currentPlaylistName === 'default') {
+        this.playlists['default'] = JSON.parse(JSON.stringify(this.defaultPlaylist));
+        alert('Playlist restaurada para as músicas padrão!');
+      } else {
+        delete this.playlists[this.currentPlaylistName];
+        this.currentPlaylistName = 'default';
+      }
+      
+      this.currentTrackIndex = 0;
+      this.audio.pause();
+      this.isPlaying = false;
+      this.playBtn.textContent = 'play_arrow';
+      this.progress.value = 0;
+      
+      localStorage.setItem('driftPanelPlaylists', JSON.stringify(this.playlists));
+      this.updatePlaylistSelect();
+      this.loadAndPlayTrack(this.currentTrackIndex);
     }
-
-    this.currentTrackIndex = 0;
-    if (this.audio) this.audio.pause();
-    this.isPlaying = false;
-    if (this.playIcon) this.playIcon.textContent = 'play_arrow';
-    if (this.progress) this.progress.value = 0;
-
-    localStorage.setItem('driftPanelPlaylists', JSON.stringify(this.playlists));
-    this.updatePlaylistSelect();
-    this.loadAndPlayTrack(this.currentTrackIndex);
   }
 
   restoreDefaultPlaylist() {
-    if (!confirm('Restaurar a playlist padrão com as músicas oficiais?')) return;
-
-    this.playlists['default'] = JSON.parse(JSON.stringify(this.defaultPlaylist));
-    this.currentPlaylistName = 'default';
-    this.currentTrackIndex = 0;
-    if (this.audio) this.audio.pause();
-    this.isPlaying = false;
-    if (this.playIcon) this.playIcon.textContent = 'play_arrow';
-    if (this.progress) this.progress.value = 0;
-
-    localStorage.setItem('driftPanelPlaylists', JSON.stringify(this.playlists));
-    this.updatePlaylistSelect();
-    this.loadAndPlayTrack(this.currentTrackIndex);
-    alert('✅ Playlist padrão restaurada com sucesso!');
+    if (confirm('Restaurar a playlist padrão com as músicas oficiais?')) {
+      this.playlists['default'] = JSON.parse(JSON.stringify(this.defaultPlaylist));
+      this.currentPlaylistName = 'default';
+      this.currentTrackIndex = 0;
+      this.audio.pause();
+      this.isPlaying = false;
+      this.playBtn.textContent = 'play_arrow';
+      this.progress.value = 0;
+      
+      localStorage.setItem('driftPanelPlaylists', JSON.stringify(this.playlists));
+      this.updatePlaylistSelect();
+      this.loadAndPlayTrack(this.currentTrackIndex);
+      alert('✅ Playlist padrão restaurada com sucesso!');
+    }
   }
 
   // ============ ADICIONAR FAIXAS DE ARQUIVO ============
+
   addTracksFromFiles(e) {
     const files = Array.from(e.target.files);
+    
     if (files.length === 0) return;
 
     if (this.currentPlaylistName === 'default') {
@@ -395,20 +422,25 @@ class DriftPlayer {
       this.playlists[newPlaylistName] = [];
       this.currentPlaylistName = newPlaylistName;
     }
-
+    
     let addedCount = 0;
 
     files.forEach((file) => {
       if (!file.type.startsWith('audio/')) return;
+
       const url = URL.createObjectURL(file);
-      const name = file.name.replace(/\.[^/.]+$/, '');
+
+      // Tentar inferir título e artista a partir do nome do arquivo
+      const name = file.name.replace(/\.[^/.]+$/, ''); // remove extensão
       let title = name;
       let artist = 'Desconhecido';
+      // se o nome contiver " - " assumimos "Artista - Título"
       if (name.includes(' - ')) {
         const parts = name.split(' - ');
         artist = parts[0].trim();
         title = parts.slice(1).join(' - ').trim();
       }
+
       const newTrack = {
         id: Date.now() + Math.floor(Math.random() * 1000),
         title,
@@ -416,13 +448,15 @@ class DriftPlayer {
         producer: '',
         duration: '0:00',
         url,
-        cover: '../playlist/covers/default-cover.jpg'
+        cover: '../playlist/covers/default-cover.jpg' // fallback
       };
+
       this.playlists[this.currentPlaylistName].push(newTrack);
       addedCount++;
     });
 
     if (addedCount > 0) {
+      // Salvar e atualizar UI
       localStorage.setItem('driftPanelPlaylists', JSON.stringify(this.playlists));
       this.updatePlaylistSelect();
       this.updatePlaylistDisplay();
@@ -431,25 +465,31 @@ class DriftPlayer {
       alert('Nenhum arquivo de áudio válido selecionado.');
     }
 
+    // reset input para permitir re-seleção dos mesmos arquivos futuramente
     e.target.value = '';
   }
 
   // ============ UI AUXILIAR ============
+
   updatePlaylistDisplay() {
+    // Implementação simples: você pode preencher um elemento de lista com as faixas da playlist atual.
+    // Procure por um elemento com id="playlist-display" no seu HTML, se quiser ver a lista atualizada.
     const display = document.getElementById('playlist-display');
     if (!display) return;
+
     display.innerHTML = '';
     const list = this.playlists[this.currentPlaylistName] || [];
     list.forEach((track, idx) => {
       const item = document.createElement('div');
       item.className = 'playlist-item';
       item.textContent = `${idx + 1}. ${track.title} — ${track.artist}`;
+      // clique para tocar
       item.addEventListener('click', () => {
         this.currentTrackIndex = idx;
         this.loadAndPlayTrack(idx);
         this.isPlaying = true;
-        this.audio.play().catch(() => {});
-        if (this.playIcon) this.playIcon.textContent = 'pause';
+        this.audio.play();
+        this.playBtn.textContent = '⏸️';
       });
       display.appendChild(item);
     });
@@ -459,5 +499,6 @@ class DriftPlayer {
 // Inicializa o player quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
   const player = new DriftPlayer();
+  // opcional: expor para debug
   window.driftPlayer = player;
 });
