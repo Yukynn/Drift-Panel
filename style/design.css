@@ -354,6 +354,8 @@ main > div#menu-parte > div#menu-caixa > div#menu-para-creditos {
     font-size: 40px;
     font-weight: bolder;
     text-shadow: none;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .pequeno {
@@ -583,29 +585,6 @@ main > div#creditos> div#creditos-caixa {
     margin: auto;
 }
 
-
-footer > div#creditos > div#creditos-caixa > div#creditos-itens {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.16);
-    padding: 10px;
-    border-radius: 16px;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.182);
-     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.16);
-
-    filter: blur(10px);
-    transition: 0.8s;
-}
-
-footer > div#creditos > div#creditos-caixa > div#creditos-itens:hover {
-    filter: none;
-}
-
 /*             Reprodutor           */
 #cover-art {
     background-size: cover;
@@ -778,6 +757,28 @@ button {
     margin: 10px;
 }
 /*                   Creditos*/
+
+footer > div#creditos > div#creditos-caixa > div#creditos-itens {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.16);
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.182);
+     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+
+    filter: blur(10px);
+    transition: 0.8s;
+}
+
+footer > div#creditos > div#creditos-caixa > div#creditos-itens:hover {
+    filter: none;
+}
 #creditos-p-grande {
     font-family:"Kolker Brush", cursive;
     font-size: 5em;
@@ -789,8 +790,12 @@ button {
 #creditos-playlist {
     color: white;
 }
+
+#creditos-playlist > ul {
+    list-style: none;
+}
 footer > div#copyright {
-    height: 740px;
+    height: 750px;
     color: white;
     background-color: rgb(0, 0, 0);
 }

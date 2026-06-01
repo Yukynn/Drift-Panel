@@ -12,7 +12,106 @@
 
 /*            Tablet               */
 
+@media screen and (min-width: 601px) and (max-width: 900px) {
+     main  > div#introducao > div#introducao-caixa {
 
+    padding: 0px;
+    max-width: 90%;
+    width: 700px;
+    margin: auto;
+
+    transition: 0.8s;
+    }
+    main > div#introducao > div#introducao-caixa > div#introducao-texto > p {
+        padding: 2px;
+        font-size: 3em;
+    }
+    main > div#introducao > div#introducao-caixa > div#introducao-imagem {
+    height: 300px;
+    width:  100%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/entero-car.png");
+    
+    margin-bottom: 300px;
+
+    transition: 0.8s;
+    }
+
+    /*             Resumo          */
+    main > div#resumo > div#resumo-caixa {
+        font-size: 1.3em;
+        width: 90%;
+    }
+    main > div#resumo > div#resumo-caixa > div#resumo-parte-1 {
+        margin-bottom: 250px;
+    }
+
+     /*            MENU                 */
+     .grande {
+    font-family:"Kolker Brush", cursive;
+    font-size: 5em;
+    color: white;
+    text-shadow: 2px 1px #090921;
+
+    padding-top: 10px;
+    padding-left: 100px;
+
+    transition: 0.8s;
+    }
+    .pequeno {
+        padding: 15px;
+        margin-left: 100px;
+    }
+    .pequeno:hover {
+    background-color: #FFF752;
+    margin-left: 120px;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.37);
+    }
+    /*         Função do site            */
+    main > div#sobre > div#sobre-caixa {
+    
+    display: flex;
+    width: 90%;
+    height: 550px;
+    padding: 30px;
+
+    margin: auto;
+    }
+    main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-grande {
+        text-align: center;
+        font-weight: bolder;
+        color: white;
+        font-size: 6em;
+        margin-bottom: 40px;
+
+        font-family:"Kolker Brush", cursive;
+
+        text-shadow: 2px 1px #090921;
+    }
+    main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-pequeno {
+        font-size: 1.3em;
+        font-weight: bolder;
+        text-indent: 30px;
+        color: white;
+        text-shadow: 2px 1px #090921;
+    }
+    /*         Reprodutor        */
+    main > div#musica > div#musica-caixa {
+        width: 90%;
+        height: 450px;
+
+        margin: auto;
+    }
+
+    /*           Creditos           */
+    footer > div#creditos > div#creditos-caixa > div#creditos-itens {
+        width: 90%;
+        margin: auto;
+    }
+}
 
 /*              Computador           */
 @media screen and (min-width: 901px)  {
@@ -49,7 +148,6 @@
     }
     main > div#introducao > div#introducao-caixa > div#introducao-imagem:hover {
         background-image: url("../images/pexels-entero-37199657.jpg");
-        border-radius: 50%;
         
         transition: 0.8s;
     }
