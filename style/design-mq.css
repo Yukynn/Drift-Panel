@@ -42,7 +42,7 @@
 
     /*             Resumo          */
     main > div#resumo > div#resumo-caixa {
-        font-size: 1.3em;
+        font-size: 1.0em;
         width: 90%;
     }
     main > div#resumo > div#resumo-caixa > div#resumo-parte-1 {
@@ -92,7 +92,7 @@
         text-shadow: 2px 1px #090921;
     }
     main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-pequeno {
-        font-size: 1.3em;
+        font-size: 1.0em;
         font-weight: bolder;
         text-indent: 30px;
         color: white;
@@ -115,6 +115,8 @@
 
 /*              Computador           */
 @media screen and (min-width: 901px)  {
+
+    /*           InTRODUÇÃO*/
     main > div#introducao {
     display: flex;
     flex-direction: column;
@@ -122,19 +124,26 @@
     background-image: linear-gradient(to bottom,#5952FF,  #696980);
 
     border-bottom: 1px solid #FFF752;
-    padding-top: 220px;
+    padding-top: 130px;
     }
     main  > div#introducao > div#introducao-caixa {
 
     padding: 20px;
     max-width: 90%;
-    width: 700px;
+    width: 1000px;
     margin: auto;
 
     transition: 0.8s;
     }
+
+    main > div#introducao > div#introducao-caixa > div#introducao-texto > p {
+        text-align: center;
+        padding: 2px;
+        font-size: 4em;
+    }
+
     main > div#introducao > div#introducao-caixa > div#introducao-imagem {
-    height: 300px;
+    height: 400px;
     width:  100%;
 
     background-size: cover;
@@ -145,10 +154,5 @@
     margin-bottom: 300px;
 
     transition: 0.8s;
-    }
-    main > div#introducao > div#introducao-caixa > div#introducao-imagem:hover {
-        background-image: url("../images/pexels-entero-37199657.jpg");
-        
-        transition: 0.8s;
     }
 }
