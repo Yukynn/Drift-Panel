@@ -116,7 +116,7 @@
 /*              Computador           */
 @media screen and (min-width: 901px)  {
 
-    /*           InTRODUÇÃO*/
+    /*           Introdução*/
     main > div#introducao {
     display: flex;
     flex-direction: column;
@@ -154,5 +154,75 @@
     margin-bottom: 300px;
 
     transition: 0.8s;
+    }
+
+    /*             Resumo          */
+    main > div#resumo > div#resumo-caixa {
+        flex-direction: row;
+        font-size: 1.3em;
+        width: 90%;
+    }
+
+     /*            MENU                 */
+     .grande {
+    font-family:"Kolker Brush", cursive;
+    font-size: 5em;
+    color: white;
+    text-shadow: 2px 1px #090921;
+
+    padding-top: 10px;
+    padding-left: 100px;
+
+    transition: 0.8s;
+    }
+    .pequeno {
+        padding: 15px;
+        margin-left: 100px;
+    }
+    .pequeno:hover {
+    background-color: #FFF752;
+    margin-left: 120px;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.37);
+    }
+    /*         Função do site            */
+    main > div#sobre > div#sobre-caixa {
+    
+    display: flex;
+    width: 90%;
+    height: 550px;
+    padding: 30px;
+
+    margin: auto;
+    }
+    main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-grande {
+        text-align: center;
+        font-weight: bolder;
+        color: white;
+        font-size: 6em;
+        margin-bottom: 40px;
+
+        font-family:"Kolker Brush", cursive;
+
+        text-shadow: 2px 1px #090921;
+    }
+    main > div#sobre > div#sobre-caixa > div#sobre-itens > p#sobre-p-pequeno {
+        font-size: 1.0em;
+        font-weight: bolder;
+        text-indent: 30px;
+        color: white;
+        text-shadow: 2px 1px #090921;
+    }
+    /*         Reprodutor        */
+    main > div#musica > div#musica-caixa {
+        width: 90%;
+        height: 450px;
+
+        margin: auto;
+    }
+
+    /*           Creditos           */
+    footer > div#creditos > div#creditos-caixa  {
+        width: 90%;
+        margin: auto;
     }
 }
