@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Drift Panel's Audio Use Policy — where the tracks come from, what you can and can't do with them.">
+<title>Audio Use Policy — Drift Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design/style.css">
+<link rel="stylesheet" href="design/policy.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="nav-brand" href="index.html">DRIFT PANEL</a>
+  <div class="nav-controls">
+    <select id="lang-select" class="control-select" aria-label="Language">
+      <option value="en">English</option>
+      <option value="pt">Português</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="ja">日本語</option>
+      <option value="it">Italiano</option>
+    </select>
+    <select id="theme-select" class="control-select" aria-label="Theme">
+      <option value="dark" data-i18n="theme.dark">Dark</option>
+      <option value="light" data-i18n="theme.light">Light</option>
+      <option value="blue" data-i18n="theme.blue">Blue</option>
+      <option value="pink" data-i18n="theme.pink">Pink</option>
+      <option value="red" data-i18n="theme.red">Red</option>
+      <option value="yellow" data-i18n="theme.yellow">Yellow</option>
+      <option value="green" data-i18n="theme.green">Green</option>
+    </select>
+  </div>
+</nav>
+
+<main class="policy">
+  <a href="index.html" class="policy-back">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    <span data-i18n="policy.back">Back to Drift Panel</span>
+  </a>
+
+  <h1 data-i18n="policy.title">Audio Use Policy</h1>
+  <p class="policy-updated" data-i18n="policy.updated">Last updated: September 2026</p>
+  <p class="policy-intro" data-i18n="policy.intro">Drift Panel is a local music player — it plays tracks made by independent producers, and every track links back to its creator. This page explains where that audio comes from and the terms under which you can listen to it here.</p>
+
+  <section class="policy-section">
+    <h2 data-i18n="policy.source.title">Where the tracks come from</h2>
+    <p data-i18n="policy.source.body">Every track in the default playlist is a "type beat" produced by independent artists and released as "Free" or "Free For Profit" downloads on their own channels. Drift Panel does not produce, own, or claim any rights over this music — it plays it, with credit to each producer visible in the Credits section and linked directly to their channel.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2 data-i18n="policy.permitted.title">What you can do</h2>
+    <ul class="policy-list">
+      <li data-i18n="policy.permitted.item1">Listen to the default tracks on this site, for personal, non-commercial enjoyment — while driving, gaming, streaming, or racing.</li>
+      <li data-i18n="policy.permitted.item2">Load your own local audio files into the player. Those files never leave your browser — Drift Panel has no server and nothing is uploaded anywhere.</li>
+      <li data-i18n="policy.permitted.item3">Save a playlist made of your own files locally, so it's ready next time you open the site on the same browser.</li>
+    </ul>
+  </section>
+
+  <section class="policy-section">
+    <h2 data-i18n="policy.prohibited.title">What this site does not do</h2>
+    <ul class="policy-list">
+      <li data-i18n="policy.prohibited.item1">Drift Panel does not license, sublicense, sell, or grant any rights to the default tracks. Any rights to use them for your own projects belong to their original producers, not to Drift Panel.</li>
+      <li data-i18n="policy.prohibited.item2">The tracks bundled here are not to be re-uploaded, redistributed, or repackaged as part of another product, video, or playlist without the producer's own permission.</li>
+      <li data-i18n="policy.prohibited.item3">Drift Panel does not collect, store, or transmit any audio files you add yourself — there is nothing to request or delete on a server, because nothing is sent to one.</li>
+    </ul>
+  </section>
+
+  <section class="policy-section">
+    <h2 data-i18n="policy.attribution.title">Attribution</h2>
+    <p data-i18n="policy.attribution.body">Each default track credits its producer by name, with a direct link to their channel, in the Credits section of the main site. If you enjoy a track, the best way to support the person who made it is to follow that link.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2 data-i18n="policy.takedown.title">Takedown requests</h2>
+    <p data-i18n="policy.takedown.body">If you are a rights holder and believe a track should not be included here, or that a credit is missing or incorrect, please open an issue on the project's GitHub repository and it will be reviewed and addressed.</p>
+    <a class="policy-link" href="https://github.com/Yukynn/Drift-Panel/issues" target="_blank" rel="noopener" data-i18n="footer.report">Report an issue</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="footer-copy" data-i18n="footer.copyright">© 2026 Yukynn. All rights reserved.</p>
+</footer>
+
+<script src="animation/policy.js"></script>
+</body>
+</html>
