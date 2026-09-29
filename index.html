@@ -51,6 +51,8 @@
       <option value="green" data-i18n="theme.green">Green</option>
     </select></label>
     <label class="settings-row settings-switch"><span data-i18n="settings.motion">Reduce animations</span><input type="checkbox" id="motion-toggle" role="switch"></label>
+    <label class="settings-row settings-switch"><span data-i18n="settings.arrow">Show scroll arrow</span><input type="checkbox" id="arrow-toggle" role="switch"></label>
+    <label class="settings-row settings-switch"><span data-i18n="settings.cursor">Custom cursor</span><input type="checkbox" id="cursor-toggle" role="switch"></label>
     </div>
   </div>
 </nav>
@@ -64,7 +66,16 @@
   <p class="hero-quote" id="hero-quote" data-i18n="hero.quote" data-typewriter="true">"Every race is all or nothing — floor it; it might be your last great story."</p>
   <h1 class="hero-title">DRIFT<br>PANEL</h1>
   <a href="#resumo" class="hero-scroll" data-i18n-aria="hero.listen" aria-label="Listen">
-    <span class="hero-scroll-line"></span>
+    <svg class="hero-arrow" viewBox="0 0 24 40" aria-hidden="true">
+      <defs>
+        <linearGradient id="hero-arrow-trail" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" class="hero-arrow-trail-start" stop-opacity="0"/>
+          <stop offset="100%" class="hero-arrow-trail-end"/>
+        </linearGradient>
+      </defs>
+      <rect x="11" y="0" width="2" height="22" fill="url(#hero-arrow-trail)"/>
+      <path class="hero-arrow-head" d="M6 20 L12 28 L18 20"/>
+    </svg>
     <span data-i18n="hero.listen">Listen</span>
   </a>
 </header>

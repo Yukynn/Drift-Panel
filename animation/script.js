@@ -7,7 +7,7 @@ const TRANSLATIONS = {
   en: {
     'nav.intro':'Introduction',
     'nav.menu':'Menu','nav.about':'About','nav.summary':'Summary','nav.feature':'Feature','nav.music':'Music','nav.credits':'Credits',
-    'settings.title':'Settings','settings.language':'Language','settings.theme':'Theme','settings.motion':'Reduce animations',
+    'settings.title':'Settings','settings.language':'Language','settings.theme':'Theme','settings.motion':'Reduce animations','settings.arrow':'Show scroll arrow','settings.cursor':'Custom cursor',
     'hero.quote':'"Every race is all or nothing — floor it; it might be your last great story."',
     'hero.listen':'Listen',
     'resumo.title':'Every lap, a chapter',
@@ -32,7 +32,7 @@ const TRANSLATIONS = {
   pt: {
     'nav.intro':'Introdução',
     'nav.menu':'Menu','nav.about':'Sobre','nav.summary':'Resumo','nav.feature':'Função','nav.music':'Música','nav.credits':'Créditos',
-    'settings.title':'Configurações','settings.language':'Idioma','settings.theme':'Tema','settings.motion':'Reduzir animações',
+    'settings.title':'Configurações','settings.language':'Idioma','settings.theme':'Tema','settings.motion':'Reduzir animações','settings.arrow':'Mostrar seta de rolagem','settings.cursor':'Cursor personalizado',
     'hero.quote':'"Faça de cada corrida um tudo ou nada — acelere ao máximo; pode ser a sua última grande história."',
     'hero.listen':'ouvir',
     'resumo.title':'Cada volta, um capítulo',
@@ -57,7 +57,7 @@ const TRANSLATIONS = {
   es: {
     'nav.intro':'Introducción',
     'nav.menu':'Menú','nav.about':'Acerca de','nav.summary':'Resumen','nav.feature':'Función','nav.music':'Música','nav.credits':'Créditos',
-    'settings.title':'Ajustes','settings.language':'Idioma','settings.theme':'Tema','settings.motion':'Reducir animaciones',
+    'settings.title':'Ajustes','settings.language':'Idioma','settings.theme':'Tema','settings.motion':'Reducir animaciones','settings.arrow':'Mostrar flecha de desplazamiento','settings.cursor':'Cursor personalizado',
     'hero.quote':'"Haz de cada carrera todo o nada — acelera al máximo; puede ser tu última gran historia."',
     'hero.listen':'escuchar',
     'resumo.title':'Cada vuelta, un capítulo',
@@ -70,7 +70,7 @@ const TRANSLATIONS = {
     'player.title':'El reproductor','player.subtitle':'Local, sin cuentas, sin subidas. Tus pistas se quedan en tu navegador.','player.noTrack':'Ninguna pista cargada',
     'action.restore':'Restaurar predeterminado','action.add':'Agregar pistas','action.save':'Guardar playlist','action.saved':'Playlist guardada','action.clear':'Limpiar',
     'queue.remove':'quitar','queue.empty':'No hay pistas en la cola','queue.label':'Playlist','queue.toggle':'Mostrar u ocultar la playlist',
-    'ctrl.shuffle':'Aleatorio','ctrl.prev':'Anterior','ctrl.play':'Reproducir o pausar','ctrl.next':'Siguiente','ctrl.repeat':'Repetir',
+    'ctrl.shuffle':'Aleatorio','ctrl.prev':'Anterior','ctrl.play':'Reproducir o pausar','ctrl.next':'Siguiente','ctrl.repeat':'Repetir','ctrl.seek':'Posición','ctrl.volume':'Volumen','player.error':'No se pudo reproducir esta pista',
     'music.title':'La banda sonora de la pista',
     'music.p':'Pistas seleccionadas por productores independientes, pensadas para acompañar el ritmo de la carrera — desde el calentamiento hasta la última curva.',
     'credits.title':'Créditos',
@@ -82,7 +82,7 @@ const TRANSLATIONS = {
   fr: {
     'nav.intro':'Introduction',
     'nav.menu':'Menu','nav.about':'À propos','nav.summary':'Résumé','nav.feature':'Fonction','nav.music':'Musique','nav.credits':'Crédits',
-    'settings.title':'Réglages','settings.language':'Langue','settings.theme':'Thème','settings.motion':'Réduire les animations',
+    'settings.title':'Réglages','settings.language':'Langue','settings.theme':'Thème','settings.motion':'Réduire les animations','settings.arrow':'Afficher la flèche de défilement','settings.cursor':'Curseur personnalisé',
     'hero.quote':'"Faites de chaque course un tout ou rien — accélérez à fond ; ce sera peut-être votre plus grande histoire."',
     'hero.listen':'écouter',
     'resumo.title':'Chaque tour, un chapitre',
@@ -95,7 +95,7 @@ const TRANSLATIONS = {
     'player.title':'Le lecteur','player.subtitle':'Local, sans compte, sans envoi. Vos morceaux restent dans votre navigateur.','player.noTrack':'Aucun morceau chargé',
     'action.restore':'Réinitialiser','action.add':'Ajouter des morceaux','action.save':'Enregistrer la playlist','action.saved':'Playlist enregistrée','action.clear':'Effacer',
     'queue.remove':'retirer','queue.empty':'Aucun morceau dans la file','queue.label':'Playlist','queue.toggle':'Afficher ou masquer la playlist',
-    'ctrl.shuffle':'Lecture aléatoire','ctrl.prev':'Précédent','ctrl.play':'Lecture ou pause','ctrl.next':'Suivant','ctrl.repeat':'Répéter',
+    'ctrl.shuffle':'Lecture aléatoire','ctrl.prev':'Précédent','ctrl.play':'Lecture ou pause','ctrl.next':'Suivant','ctrl.repeat':'Répéter','ctrl.seek':'Position','ctrl.volume':'Volume','player.error':'Impossible de lire ce morceau',
     'music.title':'La bande-son de la piste',
     'music.p':"Des morceaux sélectionnés par des producteurs indépendants, pensés pour suivre le rythme de la course — de l'échauffement au dernier virage.",
     'credits.title':'Crédits',
@@ -107,7 +107,7 @@ const TRANSLATIONS = {
   de: {
     'nav.intro':'Einführung',
     'nav.menu':'Menü','nav.about':'Über','nav.summary':'Übersicht','nav.feature':'Funktion','nav.music':'Musik','nav.credits':'Credits',
-    'settings.title':'Einstellungen','settings.language':'Sprache','settings.theme':'Design','settings.motion':'Animationen reduzieren',
+    'settings.title':'Einstellungen','settings.language':'Sprache','settings.theme':'Design','settings.motion':'Animationen reduzieren','settings.arrow':'Scroll-Pfeil anzeigen','settings.cursor':'Individueller Cursor',
     'hero.quote':'"Mach jedes Rennen zu einem Alles-oder-Nichts — gib Vollgas; es könnte deine letzte große Geschichte sein."',
     'hero.listen':'anhören',
     'resumo.title':'Jede Runde, ein Kapitel',
@@ -120,7 +120,7 @@ const TRANSLATIONS = {
     'player.title':'Der Player','player.subtitle':'Lokal, ohne Konto, ohne Upload. Deine Tracks bleiben in deinem Browser.','player.noTrack':'Kein Track geladen',
     'action.restore':'Zurücksetzen','action.add':'Tracks hinzufügen','action.save':'Playlist speichern','action.saved':'Playlist gespeichert','action.clear':'Leeren',
     'queue.remove':'entfernen','queue.empty':'Keine Tracks in der Warteschlange','queue.label':'Playlist','queue.toggle':'Playlist ein- oder ausblenden',
-    'ctrl.shuffle':'Zufallswiedergabe','ctrl.prev':'Zurück','ctrl.play':'Wiedergabe oder Pause','ctrl.next':'Weiter','ctrl.repeat':'Wiederholen',
+    'ctrl.shuffle':'Zufallswiedergabe','ctrl.prev':'Zurück','ctrl.play':'Wiedergabe oder Pause','ctrl.next':'Weiter','ctrl.repeat':'Wiederholen','ctrl.seek':'Position','ctrl.volume':'Lautstärke','player.error':'Dieser Titel konnte nicht abgespielt werden',
     'music.title':'Der Soundtrack der Strecke',
     'music.p':'Tracks, ausgewählt von unabhängigen Produzenten, passend zum Tempo des Rennens — vom Aufwärmen bis zur letzten Kurve.',
     'credits.title':'Credits',
@@ -132,7 +132,7 @@ const TRANSLATIONS = {
   ja: {
     'nav.intro':'はじめに',
     'nav.menu':'メニュー','nav.about':'紹介','nav.summary':'概要','nav.feature':'機能','nav.music':'音楽','nav.credits':'クレジット',
-    'settings.title':'設定','settings.language':'言語','settings.theme':'テーマ','settings.motion':'アニメーションを減らす',
+    'settings.title':'設定','settings.language':'言語','settings.theme':'テーマ','settings.motion':'アニメーションを減らす','settings.arrow':'スクロール矢印を表示','settings.cursor':'カスタムカーソル',
     'hero.quote':'「すべてのレースをオール・オア・ナッシングに — 全力で加速しろ。それが最後の大きな物語になるかもしれない。」',
     'hero.listen':'聴く',
     'resumo.title':'一周ごとに、ひとつの物語',
@@ -145,7 +145,7 @@ const TRANSLATIONS = {
     'player.title':'プレイヤー','player.subtitle':'ローカル動作、アカウント不要、アップロードなし。曲はブラウザ内に保存されます。','player.noTrack':'曲が読み込まれていません',
     'action.restore':'デフォルトに戻す','action.add':'曲を追加','action.save':'プレイリストを保存','action.saved':'プレイリストを保存しました','action.clear':'クリア',
     'queue.remove':'削除','queue.empty':'キューに曲がありません','queue.label':'プレイリスト','queue.toggle':'プレイリストの表示/非表示',
-    'ctrl.shuffle':'シャッフル','ctrl.prev':'前へ','ctrl.play':'再生・一時停止','ctrl.next':'次へ','ctrl.repeat':'リピート',
+    'ctrl.shuffle':'シャッフル','ctrl.prev':'前へ','ctrl.play':'再生・一時停止','ctrl.next':'次へ','ctrl.repeat':'リピート','ctrl.seek':'再生位置','ctrl.volume':'音量','player.error':'この曲は再生できませんでした',
     'music.title':'サーキットのサウンドトラック',
     'music.p':'インディーズプロデューサーが厳選した楽曲で、ウォームアップから最終コーナーまでレースのペースに寄り添います。',
     'credits.title':'クレジット',
@@ -157,7 +157,7 @@ const TRANSLATIONS = {
   it: {
     'nav.intro':'Introduzione',
     'nav.menu':'Menu','nav.about':'Chi siamo','nav.summary':'Riepilogo','nav.feature':'Funzione','nav.music':'Musica','nav.credits':'Crediti',
-    'settings.title':'Impostazioni','settings.language':'Lingua','settings.theme':'Tema','settings.motion':'Riduci le animazioni',
+    'settings.title':'Impostazioni','settings.language':'Lingua','settings.theme':'Tema','settings.motion':'Riduci le animazioni','settings.arrow':'Mostra la freccia di scorrimento','settings.cursor':'Cursore personalizzato',
     'hero.quote':'"Fai di ogni gara un tutto o niente — spingi al massimo; potrebbe essere la tua ultima grande storia."',
     'hero.listen':'ascolta',
     'resumo.title':'Ogni giro, un capitolo',
@@ -170,7 +170,7 @@ const TRANSLATIONS = {
     'player.title':'Il player','player.subtitle':'In locale, senza account, senza upload. I tuoi brani restano nel tuo browser.','player.noTrack':'Nessun brano caricato',
     'action.restore':'Ripristina predefiniti','action.add':'Aggiungi brani','action.save':'Salva playlist','action.saved':'Playlist salvata','action.clear':'Svuota',
     'queue.remove':'rimuovi','queue.empty':'Nessun brano in coda','queue.label':'Playlist','queue.toggle':'Mostra o nascondi la playlist',
-    'ctrl.shuffle':'Casuale','ctrl.prev':'Precedente','ctrl.play':'Riproduci o metti in pausa','ctrl.next':'Successivo','ctrl.repeat':'Ripeti',
+    'ctrl.shuffle':'Casuale','ctrl.prev':'Precedente','ctrl.play':'Riproduci o metti in pausa','ctrl.next':'Successivo','ctrl.repeat':'Ripeti','ctrl.seek':'Posizione','ctrl.volume':'Volume','player.error':'Impossibile riprodurre questo brano',
     'music.title':'La colonna sonora della pista',
     'music.p':"Brani selezionati da produttori indipendenti, pensati per seguire il ritmo della gara — dal riscaldamento all'ultima curva.",
     'credits.title':'Crediti',
@@ -340,29 +340,44 @@ revealTargets.forEach(el => revealObserver.observe(el));
 
 // ---------- Parallax ----------
 const parallaxEls = document.querySelectorAll('[data-parallax]');
-function updateParallax() {
-  if (reduceMotion || !parallaxEls.length) return;
+const heroPhotoEl = document.getElementById('hero-photo');
+if (heroPhotoEl) heroPhotoEl.dataset.parallax = '0.05';
+const allParallaxEls = heroPhotoEl ? [...parallaxEls, heroPhotoEl] : [...parallaxEls];
+const parallaxState = new Map();
+function computeParallaxTargets() {
   const vh = window.innerHeight;
-  parallaxEls.forEach(el => {
+  allParallaxEls.forEach(el => {
     const speed = parseFloat(el.dataset.parallax) || 0.1;
     const rect = el.getBoundingClientRect();
     const centerOffset = (rect.top + rect.height / 2) - vh / 2;
-    el.style.transform = `translate3d(0, ${(centerOffset * -speed).toFixed(1)}px, 0)`;
+    const target = centerOffset * -speed;
+    const state = parallaxState.get(el) || { current: 0, target: 0 };
+    state.target = target;
+    parallaxState.set(el, state);
   });
 }
-let parallaxTicking = false;
-function onParallaxScroll() {
-  if (parallaxTicking) return;
-  parallaxTicking = true;
-  requestAnimationFrame(() => {
-    updateParallax();
-    parallaxTicking = false;
-  });
+function parallaxLoop() {
+  if (!reduceMotion) {
+    allParallaxEls.forEach(el => {
+      const state = parallaxState.get(el);
+      if (!state) return;
+      state.current += (state.target - state.current) * 0.08;
+      el.style.transform = `translate3d(0, ${state.current.toFixed(2)}px, 0)`;
+    });
+  }
+  requestAnimationFrame(parallaxLoop);
+}
+// Recalcula sem saltar: usada quando as animações são reativadas, para não
+// fazer os elementos "voarem" do zero até a posição atual em um único frame.
+function updateParallax() {
+  computeParallaxTargets();
+  parallaxState.forEach(state => { state.current = state.target; });
 }
 {
-  window.addEventListener('scroll', onParallaxScroll, { passive: true });
-  window.addEventListener('resize', onParallaxScroll);
+  window.addEventListener('scroll', computeParallaxTargets, { passive: true });
+  window.addEventListener('resize', computeParallaxTargets);
   updateParallax();
+  requestAnimationFrame(parallaxLoop);
 }
 
 // ---------- Player card tilt ----------
@@ -756,6 +771,7 @@ themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
 const settingsBtn = document.getElementById('settings-btn');
 const settingsPanel = document.getElementById('settings-panel');
 const motionToggle = document.getElementById('motion-toggle');
+const arrowToggle = document.getElementById('arrow-toggle');
 
 function setSettingsOpen(open) {
   settingsPanel.hidden = !open;
@@ -774,7 +790,7 @@ function setMotionOff(off, save = true) {
   document.documentElement.dataset.motion = off ? 'off' : 'on';
   if (save) localStorage.setItem('driftpanel-motion', off ? 'off' : 'on');
   if (off) {
-    parallaxEls.forEach(el => { el.style.transform = ''; });
+    allParallaxEls.forEach(el => { el.style.transform = ''; });
     if (playerCardEl) playerCardEl.style.transform = '';
     updateHeroQuote();
   } else {
@@ -784,6 +800,16 @@ function setMotionOff(off, save = true) {
 motionToggle.checked = reduceMotion;
 motionToggle.disabled = osReduceMotion;   // the system setting always wins
 motionToggle.addEventListener('change', (e) => setMotionOff(e.target.checked));
+
+let showArrow = localStorage.getItem('driftpanel-arrow') !== 'off';
+function setArrowVisible(visible, save = true) {
+  showArrow = visible;
+  document.documentElement.dataset.arrow = visible ? 'on' : 'off';
+  if (save) localStorage.setItem('driftpanel-arrow', visible ? 'on' : 'off');
+}
+setArrowVisible(showArrow, false);
+arrowToggle.checked = showArrow;
+arrowToggle.addEventListener('change', (e) => setArrowVisible(e.target.checked));
 
 // ---------- Queue show/hide toggle ----------
 let queueCollapsed = localStorage.getItem('driftpanel-queue-collapsed') === 'true';
@@ -874,3 +900,124 @@ async function readId3Cover(file) {
   } catch (err) { /* not a readable ID3 cover; fall back to initials */ }
   return null;
 }
+
+
+// ---------- Custom neon cursor ----------
+(function () {
+  if (!window.matchMedia('(pointer: fine)').matches) return; // celular/tablet: sem alterações
+
+  const canvas = document.createElement('canvas');
+  canvas.id = 'cursor-canvas';
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const TRAIL_MS = 420;     // tempo até um ponto do rastro sumir por completo
+  const EASE = 0.32;        // suavização da bolinha em direção ao mouse (0-1, maior = mais colada)
+  let points = [];          // { x, y, t }
+  let targetX = window.innerWidth / 2, targetY = window.innerHeight / 2;
+  let curX = targetX, curY = targetY;
+  let hasMoved = false;
+  let hovering = false;
+  let hoveringText = false;
+  let pulse = 0;
+  let active = localStorage.getItem('driftpanel-cursor') !== 'off';
+
+  function accentColor() {
+    return getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#FF3B30';
+  }
+
+  const TEXT_SEL = 'input:not([type="range"]):not([type="checkbox"]):not([type="file"]):not([type="radio"]), textarea, [contenteditable="true"]';
+  const HOVER_SEL = 'a, button, select, label, input[type="range"], input[type="checkbox"], [role="switch"], .icon-btn, .ctrl-btn, .hero-title, .visual-tags span, .player-queue li';
+
+  document.addEventListener('mousemove', (e) => {
+    targetX = e.clientX; targetY = e.clientY;
+    if (!hasMoved) { curX = targetX; curY = targetY; hasMoved = true; }
+    const overText = e.target.closest ? e.target.closest(TEXT_SEL) : null;
+    hoveringText = !!overText;
+    hovering = !hoveringText && !!(e.target.closest && e.target.closest(HOVER_SEL));
+  }, { passive: true });
+  document.addEventListener('mousedown', () => { pulse = 1; });
+  document.addEventListener('mouseleave', () => { points = []; });
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // a bolinha persegue o mouse em vez de teleportar até ele
+    curX += (targetX - curX) * EASE;
+    curY += (targetY - curY) * EASE;
+
+    const now = performance.now();
+    if (active && !reduceMotion && !hoveringText) {
+      points.push({ x: curX, y: curY, t: now });
+    }
+    // pontos velhos somem sozinhos, mesmo com o mouse parado
+    while (points.length && now - points[0].t > TRAIL_MS) points.shift();
+
+    if (active && !reduceMotion && points.length > 1) {
+      const color = accentColor();
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      for (let i = 1; i < points.length; i++) {
+        const p0 = points[i - 1], p1 = points[i];
+        const age = 1 - (now - p1.t) / TRAIL_MS;   // 1 = recém-criado, 0 = prestes a sumir
+        const eased = age * age;                   // permanece visível e apaga rápido no fim
+        const midX = (p0.x + p1.x) / 2, midY = (p0.y + p1.y) / 2;
+        ctx.beginPath();
+        ctx.moveTo(p0.x, p0.y);
+        ctx.quadraticCurveTo(p0.x, p0.y, midX, midY);
+        ctx.strokeStyle = color;
+        ctx.globalAlpha = eased * 0.6;
+        ctx.lineWidth = 0.5 + eased * 3;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 9 * eased;
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+    if (active && !reduceMotion && !hoveringText) {
+      const color = accentColor();
+      const r = (hovering ? 9 : 5.5) + pulse * 6;
+      ctx.beginPath();
+      ctx.shadowColor = color;
+      ctx.shadowBlur = 14;
+      if (hovering) {
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = color;
+        ctx.arc(curX, curY, r, 0, Math.PI * 2);
+        ctx.stroke();
+      } else {
+        ctx.fillStyle = color;
+        ctx.arc(curX, curY, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.shadowBlur = 0;
+    }
+    pulse += (0 - pulse) * 0.15;
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+
+  function setCursorActive(on, save) {
+    active = on;
+    document.body.classList.toggle('custom-cursor-active', on);
+    canvas.style.display = on ? 'block' : 'none';
+    if (save !== false) localStorage.setItem('driftpanel-cursor', on ? 'on' : 'off');
+    if (!on) points = [];
+  }
+  setCursorActive(active, false);
+
+  const cursorToggle = document.getElementById('cursor-toggle');
+  cursorToggle.checked = active;
+  cursorToggle.addEventListener('change', (e) => setCursorActive(e.target.checked, true));
+})();

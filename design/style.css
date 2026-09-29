@@ -286,15 +286,23 @@ html[lang="ja"] .nav-links a span{display:none;}
   position:relative;
   z-index:2;
 }
-.hero-scroll-line{
-  width:1px;height:40px;
-  background:linear-gradient(var(--line), var(--accent));
-  animation:scrollpulse 2.2s ease-in-out infinite;
+.hero-arrow{
+  width:24px;height:40px;
+  overflow:visible;
+  animation:arrowFall 1.9s cubic-bezier(0.45,0,0.55,1) infinite;
 }
-@keyframes scrollpulse{
-  0%,100%{opacity:0.4;}
-  50%{opacity:1;}
+.hero-arrow-trail-end{stop-color:var(--accent);stop-opacity:0.85;}
+.hero-arrow-head{
+  fill:none;stroke:var(--accent);stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round;
 }
+@keyframes arrowFall{
+  0%{transform:translateY(-6px);opacity:0;}
+  22%{opacity:1;}
+  75%{opacity:1;}
+  100%{transform:translateY(12px);opacity:0;}
+}
+html[data-arrow="off"] .hero-arrow{display:none;}
 
 /* ---------- Sections ---------- */
 .section{
@@ -640,3 +648,32 @@ html[data-motion="off"] .nav-links{transition:none;}
 
 /* ---------- Uploaded-track cover crop ---------- */
 .player-cover img{object-fit:cover;}
+
+/* ---------- Car photo: independent parallax layer ---------- */
+.hero-photo{will-change:transform;}
+
+/* ---------- Custom neon cursor ---------- */
+#cursor-canvas{
+  position:fixed;inset:0;z-index:9999;
+  pointer-events:none;
+}
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button,
+body.custom-cursor-active label,
+body.custom-cursor-active select,
+body.custom-cursor-active .icon-btn,
+body.custom-cursor-active .ctrl-btn,
+body.custom-cursor-active .player-queue li{
+  cursor:none;
+}
+body.custom-cursor-active input[type="range"]::-webkit-slider-thumb{cursor:none;}
+body.custom-cursor-active input[type="range"]::-moz-range-thumb{cursor:none;}
+body.custom-cursor-active input:not([type="range"]):not([type="checkbox"]):not([type="file"]):not([type="radio"]),
+body.custom-cursor-active textarea,
+body.custom-cursor-active [contenteditable="true"]{
+  cursor:text;
+}
+@media (pointer:coarse){
+  #cursor-canvas{display:none !important;}
+}
